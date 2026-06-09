@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Brew &amp; Soul</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/contact.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+  <style>
+    .page-hero {
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      /* !NOTE: ការគណនា Padding ដោយប្រើ var(--navbar-h) និង var(--space-6) សម្រាប់គម្លាត */
+      padding: calc(var(--navbar-h) + var(--space-6)) var(--space-4) var(--space-6); 
+      background: linear-gradient(135deg, var(--clr-primary-600), var(--clr-primary-500)); /* !NOTE: ពណ៌ Gradient ពីពណ៌ Primary 600 ទៅ 500 */
+      color: #fff;
+    }
+    .page-hero h1 { color: #fff; }
+    .page-hero p  { color: rgba(255,255,255,0.82); margin-top: var(--space-2); } /* !NOTE: var(--space-2) = 16px */
+
+    /* Map placeholder */
+    .map-section {
+      padding: var(--space-6) 0; /* !NOTE: var(--space-6) = 64px */
+      background-color: var(--bg-page); /* !NOTE: var(--bg-page) = ពណ៌ផ្ទៃ Background ទំព័រ */
+    }
+    .map-placeholder {
+      width: 100%;
+      height: 380px;
+      border-radius: var(--radius-xl); /* !NOTE: var(--radius-xl) = 24px (មូលជ្រុងកាត) */
+      overflow: hidden;
+      border: 1px solid var(--border-color); /* !NOTE: var(--border-color) = ពណ៌គែម */
+      box-shadow: var(--shadow-md); /* !NOTE: var(--shadow-md) = ស្រមោលមធ្យម */
+      /* Styled placeholder since we can't embed external maps */
+      background: linear-gradient(135deg, var(--clr-primary-100), var(--clr-primary-200)); /* !NOTE: ពណ៌ Primary 100 ទៅ 200 */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2); /* !NOTE: var(--space-2) = 16px */
+      color: var(--clr-primary-600); /* !NOTE: var(--clr-primary-600) = ពណ៌អត្ថបទ Primary 600 */
+    }
+    .map-placeholder span { font-size: 3rem; }
+    .map-placeholder p    { font-weight: 600; font-size: 1.05rem; }
+    .map-placeholder small { color: var(--text-muted); } /* !NOTE: var(--text-muted) = ពណ៌អក្សរស្រាល */
+  </style>
+</head>
+<body>
+    <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <span class="logo-icon">&#9749;</span>
+        <span class="logo-text">Brew &amp; Soul</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="menu.html"    class="nav-link">Menu</a></li>
+        <li><a href="about.html"   class="nav-link">About</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
+          <span class="toggle-icon" id="toggleIcon">&#127769;</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Banner -->
+  <section class="page-hero">
+    <div>
+      <p class="section-eyebrow" style="color:rgba(255,255,255,0.7)">Say Hello</p>
+      <h1>Contact Us</h1>
+      <p>We're always happy to hear from you.</p>
+    </div>
+  </section>
+
+  <!-- Contact Form + Info -->
+  <section class="contact-section" style="padding-top: var(--space-6);">
+    <div class="container contact-grid">
+      <div class="contact-info reveal">
+        <p class="section-eyebrow">Find Us</p>
+        <h2 class="section-title">Visit Us Today</h2>
+        <p class="contact-desc">
+          Drop by for a cup, reach out to book an event space, or just send
+          us a message — we'd love to hear from you.
+        </p>
+        <ul class="contact-details">
+          <li>
+            <span class="contact-icon">&#128205;</span>
+            <span>42 Roast Lane, Coffeebury, CA 94102</span>
+          </li>
+          <li>
+            <span class="contact-icon">&#128222;</span>
+            <span>(415) 555-0172</span>
+          </li>
+          <li>
+            <span class="contact-icon">&#9993;</span>
+            <span>hello@brewandsoul.com</span>
+          </li>
+          <li>
+            <span class="contact-icon">&#128336;</span>
+            <span>Mon–Fri 7am–8pm &nbsp;·&nbsp; Sat–Sun 8am–9pm</span>
+          </li>
+          <li>
+            <span class="contact-icon">&#128640;</span>
+            <span>Free WiFi &nbsp;·&nbsp; Pet-friendly Patio &nbsp;·&nbsp; Accessible</span>
+          </li>
+        </ul>
+      </div>
+
+      <form class="contact-form reveal reveal-right" id="contactForm" novalidate>
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Jane Doe" autocomplete="name" />
+          <span class="form-error" id="nameError"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="jane@example.com" autocomplete="email" />
+          <span class="form-error" id="emailError"></span>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="How can we help?" />
+          <span class="form-error" id="subjectError"></span>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell us more..."></textarea>
+          <span class="form-error" id="messageError"></span>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+        <p class="form-success" id="formSuccess"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Map Placeholder -->
+  <section class="map-section">
+    <div class="container">
+      <div class="map-placeholder reveal">
+        <span>&#128205;</span>
+        <p>42 Roast Lane, Coffeebury, CA 94102</p>
+        <small>Open in Maps for directions</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo">
+          <span class="logo-icon">&#9749;</span>
+          <span class="logo-text">Brew &amp; Soul</span>
+        </a>
+        <p class="footer-tagline">Specialty coffee, sourced responsibly,<br />crafted with care.</p>
+        <div class="social-links">
+          <a href="#" class="social-link">IG</a>
+          <a href="#" class="social-link">TW</a>
+          <a href="#" class="social-link">FB</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <ul class="hours-list">
+          <li><span>Mon – Fri</span><span>7am – 8pm</span></li>
+          <li><span>Saturday</span><span>8am – 9pm</span></li>
+          <li><span>Sunday</span><span>8am – 9pm</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Brew &amp; Soul. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/darkmode.js"></script>
+  <script src="../js/navbar.js"></script>
+  <script src="../js/animation.js"></script>
+  <script src="../js/form-validation.js"></script>
+</body>
+</html>

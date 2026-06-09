@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu — Brew &amp; Soul</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/menu.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+  <style>
+    /* Page hero banner */
+    .page-hero {
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: calc(var(--navbar-h) + var(--space-6)) var(--space-4) var(--space-6);
+      background: linear-gradient(135deg, var(--clr-primary-600), var(--clr-primary-500));
+      color: #fff;
+    }
+    .page-hero h1 { color: #fff; }
+    .page-hero p  { color: rgba(255,255,255,0.82); margin-top: var(--space-2); font-size: 1.1rem; }
+
+    /* Full menu categories */
+    .menu-category { margin-bottom: var(--space-6); }
+    .menu-category-title {
+      font-size: 1.4rem;
+      color: var(--clr-primary-500);
+      margin-bottom: var(--space-3);
+      padding-bottom: var(--space-1);
+      border-bottom: 2px solid var(--border-color);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <span class="logo-icon">&#9749;</span>
+        <span class="logo-text">Brew &amp; Soul</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="menu.html"    class="nav-link active">Menu</a></li>
+        <li><a href="about.html"   class="nav-link">About</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
+          <span class="toggle-icon" id="toggleIcon">&#127769;</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Banner -->
+  <section class="page-hero">
+    <div>
+      <p class="section-eyebrow" style="color:rgba(255,255,255,0.7)">Explore</p>
+      <h1>Our Full Menu</h1>
+      <p>Handcrafted drinks and bites — something for every mood.</p>
+    </div>
+  </section>
+
+  <!-- Full Menu -->
+  <section class="menu-section" style="padding-top: var(--space-6);">
+    <div class="container">
+
+      <div class="menu-filters reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="espresso">Espresso</button>
+        <button class="filter-btn" data-filter="cold">Cold Brew</button>
+        <button class="filter-btn" data-filter="tea">Tea &amp; Matcha</button>
+        <button class="filter-btn" data-filter="food">Food</button>
+        <button class="filter-btn" data-filter="seasonal">Seasonal</button>
+      </div>
+
+      <div class="menu-grid" id="menuGrid">
+
+        <!-- Espresso -->
+        <article class="menu-card reveal" data-category="espresso">
+          <div class="card-img-wrap">
+            <img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Classic Latte" loading="lazy" />
+            <span class="card-badge">Popular</span>
+          </div>
+          <div class="card-body">
+            <div class="card-header"><h3 class="card-title">Classic Latte</h3><span class="card-price">$5.50</span></div>
+            <p class="card-desc">Double espresso, steamed whole milk, micro-foam rosette.</p>
+            <div class="card-footer"><span class="card-tag">Espresso</span><button class="card-btn">Order Now</button></div>
+          </div>
+        </article>
+
+        <article class="menu-card reveal" data-category="espresso">
+        <div class="card-img-wrap">
+            <!-- Ensure this URL works or replace with a working image path -->
+            <img src="https://i.pinimg.com/1200x/0c/c8/bf/0cc8bfcc3cba9967863f5fd0c6b5e7c3.jpg" alt="Flat White" loading="lazy" />
+        </div>
+        <div class="card-body">
+            <div class="card-header">
+            <h3 class="card-title">Flat White</h3>
+            <span class="card-price">$5.00</span>
+            </div>
+            <p class="card-desc">Ristretto shots with velvety steamed milk — intense and smooth.</p>
+            <div class="card-footer">
+            <span class="card-tag">Espresso</span>
+            <button class="card-btn">Order Now</button>
+            </div>
+        </div>
+        </article>
+
+        <article class="menu-card reveal" data-category="espresso">
+          <div class="card-img-wrap">
+            <img src="https://images.pexels.com/photos/1187317/pexels-photo-1187317.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cappuccino" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="card-header"><h3 class="card-title">Cappuccino</h3><span class="card-price">$4.75</span></div>
+            <p class="card-desc">Equal parts espresso, steamed milk, and airy foam.</p>
+            <div class="card-footer"><span class="card-tag">Espresso</span><button class="card-btn">Order Now</button></div>
+          </div>
+        </article>
+
+        <article class="menu-card reveal" data-category="espresso">
+          <div class="card-img-wrap">
+            <img src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Macchiato" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="card-header"><h3 class="card-title">Macchiato</h3><span class="card-price">$4.25</span></div>
+            <p class="card-desc">Bold espresso "stained" with a dollop of foamed milk.</p>
+            <div class="card-footer"><span class="card-tag">Espresso</span><button class="card-btn">Order Now</button></div>
+          </div>
+        </article>
+
+        <!-- Cold Brew -->
+        <article class="menu-card reveal" data-category="cold">
+          <div class="card-img-wrap">
+            <img src="https://images.pexels.com/photos/2615323/pexels-photo-2615323.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Nitro Cold Brew" loading="lazy" />
+            <span class="card-badge">New</span>
+          </div>
+          <div class="card-body">
+            <div class="card-header"><h3 class="card-title">Nitro Cold Brew</h3><span class="card-price">$6.00</span></div>
+            <p class="card-desc">18-hour steeped, nitrogen-infused cold brew — creamy without cream.</p>
+            <div class="card-footer"><span class="card-tag">Cold Brew</span><button class="card-btn">Order Now</button></div>
+          </div>
+        </article>
+
+        <article class="menu-card reveal" data-category="cold">
+          <div class="card-img-wrap">
+            <img src="https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Iced Americano" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="card-header"><h3 class="card-title">Iced Americano</h3><span class="card-price">$4.50</span></div>
+            <p class="card-desc">Two shots over ice, topped with cold filtered water.</p>
+            <div class="card-footer"><span class="card-tag">Cold Brew</span><button class="card-btn">Order Now</button></div>
+          </div>
+        </article>
+
+        <!-- Tea & Matcha -->
+        <article class="menu-card reveal" data-category="tea">
+          <div class="card-img-wrap">
+            <img src="https://images.pexels.com/photos/1638280/pexels-photo-1638280.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Matcha Latte" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="card-header"><h3 class="card-title">Matcha Latte</h3><span class="card-price">$5.75</span></div>
+            <p class="card-desc">Ceremonial grade matcha whisked with steamed oat milk.</p>
+            <div class="card-footer"><span class="card-tag">Tea</span><button class="card-btn">Order Now</button></div>
+          </div>
+        </article>
+
+        <article class="menu-card reveal" data-category="tea">
+          <div class="card-img-wrap">
+            <img src="https://images.pexels.com/photos/734983/pexels-photo-734983.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Chai Latte" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="card-header"><h3 class="card-title">Masala Chai</h3><span class="card-price">$5.25</span></div>
+            <p class="card-desc">Spiced black tea concentrate with steamed whole milk.</p>
+            <div class="card-footer"><span class="card-tag">Tea</span><button class="card-btn">Order Now</button></div>
+          </div>
+        </article>
+
+        <!-- Food -->
+        <article class="menu-card reveal" data-category="food">
+          <div class="card-img-wrap">
+            <img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Avocado Toast" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="card-header"><h3 class="card-title">Avocado Toast</h3><span class="card-price">$9.00</span></div>
+            <p class="card-desc">Sourdough, smashed avocado, chilli flakes, poached egg.</p>
+            <div class="card-footer"><span class="card-tag">Food</span><button class="card-btn">Order Now</button></div>
+          </div>
+        </article>
+
+        <article class="menu-card reveal" data-category="food">
+          <div class="card-img-wrap">
+            <img src="https://images.pexels.com/photos/1359326/pexels-photo-1359326.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Banana Bread" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="card-header"><h3 class="card-title">Banana Bread</h3><span class="card-price">$4.50</span></div>
+            <p class="card-desc">Moist, walnut-studded banana bread, toasted to order.</p>
+            <div class="card-footer"><span class="card-tag">Food</span><button class="card-btn">Order Now</button></div>
+          </div>
+        </article>
+
+        <!-- Seasonal -->
+        <article class="menu-card reveal" data-category="seasonal">
+          <div class="card-img-wrap">
+            <img src="https://images.pexels.com/photos/4109743/pexels-photo-4109743.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pumpkin Spice Latte" loading="lazy" />
+            <span class="card-badge">Seasonal</span>
+          </div>
+          <div class="card-body">
+            <div class="card-header"><h3 class="card-title">Pumpkin Spice Latte</h3><span class="card-price">$6.25</span></div>
+            <p class="card-desc">Real pumpkin, cinnamon, nutmeg, and espresso. Autumn in a cup.</p>
+            <div class="card-footer"><span class="card-tag">Seasonal</span><button class="card-btn">Order Now</button></div>
+          </div>
+        </article>
+
+        <article class="menu-card reveal" data-category="seasonal">
+          <div class="card-img-wrap">
+            <img src="https://images.pexels.com/photos/3727255/pexels-photo-3727255.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Lavender Honey Latte" loading="lazy" />
+            <span class="card-badge">Seasonal</span>
+          </div>
+          <div class="card-body">
+            <div class="card-header"><h3 class="card-title">Lavender Honey Latte</h3><span class="card-price">$6.00</span></div>
+            <p class="card-desc">Espresso, honey-lavender syrup, and perfectly steamed oat milk.</p>
+            <div class="card-footer"><span class="card-tag">Seasonal</span><button class="card-btn">Order Now</button></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo">
+          <span class="logo-icon">&#9749;</span>
+          <span class="logo-text">Brew &amp; Soul</span>
+        </a>
+        <p class="footer-tagline">Specialty coffee, sourced responsibly,<br />crafted with care.</p>
+        <div class="social-links">
+          <a href="#" class="social-link">IG</a>
+          <a href="#" class="social-link">TW</a>
+          <a href="#" class="social-link">FB</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <ul class="hours-list">
+          <li><span>Mon – Fri</span><span>7am – 8pm</span></li>
+          <li><span>Saturday</span><span>8am – 9pm</span></li>
+          <li><span>Sunday</span><span>8am – 9pm</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Brew &amp; Soul. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/darkmode.js"></script>
+  <script src="../js/navbar.js"></script>
+  <script src="../js/animation.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

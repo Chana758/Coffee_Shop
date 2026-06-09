@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Brew &amp; Soul</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/gallery.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+  <style>
+    .page-hero {
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: calc(var(--navbar-h) + var(--space-6)) var(--space-4) var(--space-6);
+      background: linear-gradient(135deg, var(--clr-primary-600), var(--clr-primary-500));
+      color: #fff;
+    }
+    .page-hero h1 { color: #fff; }
+    .page-hero p  { color: rgba(255,255,255,0.82); margin-top: var(--space-2); }
+
+    /* Full gallery page layout */
+    .gallery-full { padding: var(--space-6) 0; }
+
+    .gallery-full-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: var(--space-2);
+    }
+
+    .gallery-full-grid .gallery-item {
+      height: 260px;
+      border-radius: var(--radius-md);
+    }
+
+    /* Lightbox overlay */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0,0,0,0.9);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-4);
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-img {
+      max-width: 90vw;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: var(--radius-lg);
+      animation: lightboxIn 0.3s ease;
+    }
+
+    @keyframes lightboxIn {
+      from { opacity: 0; transform: scale(0.92); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: var(--space-3);
+      right: var(--space-3);
+      font-size: 2rem;
+      color: #fff;
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      opacity: 0.8;
+      transition: opacity var(--transition-fast);
+    }
+
+    .lightbox-close:hover { opacity: 1; }
+  </style>
+</head>
+<body>
+    <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <span class="logo-icon">&#9749;</span>
+        <span class="logo-text">Brew &amp; Soul</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="menu.html"    class="nav-link">Menu</a></li>
+        <li><a href="about.html"   class="nav-link">About</a></li>
+        <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
+          <span class="toggle-icon" id="toggleIcon">&#127769;</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Banner -->
+  <section class="page-hero">
+    <div>
+      <p class="section-eyebrow" style="color:rgba(255,255,255,0.7)">Visual Stories</p>
+      <h1>Our Gallery</h1>
+      <p>A peek behind the counter and into every cup.</p>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery-full">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Click to expand</p>
+        <h2 class="section-title">Photos</h2>
+      </div>
+      <div class="gallery-full-grid reveal-stagger" id="galleryGrid">
+
+        <div class="gallery-item" data-src="https://images.pexels.com/photos/374885/pexels-photo-374885.jpeg?auto=compress&cs=tinysrgb&w=1200">
+          <img src="https://images.pexels.com/photos/374885/pexels-photo-374885.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Interior" loading="lazy" />
+          <div class="gallery-overlay"><span>Interior</span></div>
+        </div>
+
+        <div class="gallery-item" data-src="https://images.pexels.com/photos/1600711/pexels-photo-1600711.jpeg?auto=compress&cs=tinysrgb&w=1200">
+          <img src="https://images.pexels.com/photos/1600711/pexels-photo-1600711.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Latte Art" loading="lazy" />
+          <div class="gallery-overlay"><span>Latte Art</span></div>
+        </div>
+
+        <div class="gallery-item" data-src="https://images.pexels.com/photos/894695/pexels-photo-894695.jpeg?auto=compress&cs=tinysrgb&w=1200">
+          <img src="https://images.pexels.com/photos/894695/pexels-photo-894695.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Coffee Beans" loading="lazy" />
+          <div class="gallery-overlay"><span>Single Origin</span></div>
+        </div>
+
+        <div class="gallery-item" data-src="https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&w=1200">
+          <img src="https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pour Over" loading="lazy" />
+          <div class="gallery-overlay"><span>Pour Over</span></div>
+        </div>
+
+        <div class="gallery-item" data-src="https://images.pexels.com/photos/2396220/pexels-photo-2396220.jpeg?auto=compress&cs=tinysrgb&w=1200">
+          <img src="https://images.pexels.com/photos/2396220/pexels-photo-2396220.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Coffee and Book" loading="lazy" />
+          <div class="gallery-overlay"><span>The Ritual</span></div>
+        </div>
+
+        <div class="gallery-item" data-src="https://images.pexels.com/photos/683039/pexels-photo-683039.jpeg?auto=compress&cs=tinysrgb&w=1200">
+          <img src="https://images.pexels.com/photos/683039/pexels-photo-683039.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Barista" loading="lazy" />
+          <div class="gallery-overlay"><span>The Craft</span></div>
+        </div>
+
+        <div class="gallery-item" data-src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1200">
+          <img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Espresso" loading="lazy" />
+          <div class="gallery-overlay"><span>Espresso</span></div>
+        </div>
+
+        <div class="gallery-item" data-src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1200">
+          <img src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Latte" loading="lazy" />
+          <div class="gallery-overlay"><span>Morning Latte</span></div>
+        </div>
+
+        <div class="gallery-item" data-src="https://images.pexels.com/photos/1251175/pexels-photo-1251175.jpeg?auto=compress&cs=tinysrgb&w=1200">
+          <img src="https://i.pinimg.com/736x/aa/fb/54/aafb541b9602b44676e105f00720f09e.jpg" alt="Beans" loading="lazy" />
+          <div class="gallery-overlay"><span>Freshly Roasted</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">&times;</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="Enlarged gallery image" />
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo">
+          <span class="logo-icon">&#9749;</span>
+          <span class="logo-text">Brew &amp; Soul</span>
+        </a>
+        <p class="footer-tagline">Specialty coffee, sourced responsibly,<br />crafted with care.</p>
+        <div class="social-links">
+          <a href="#" class="social-link">IG</a>
+          <a href="#" class="social-link">TW</a>
+          <a href="#" class="social-link">FB</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <ul class="hours-list">
+          <li><span>Mon – Fri</span><span>7am – 8pm</span></li>
+          <li><span>Saturday</span><span>8am – 9pm</span></li>
+          <li><span>Sunday</span><span>8am – 9pm</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Brew &amp; Soul. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/darkmode.js"></script>
+  <script src="../js/navbar.js"></script>
+  <script src="../js/animation.js"></script>
+  <script>
+    /* Lightbox for gallery page */
+    (function () {
+      var lightbox  = document.getElementById("lightbox");
+      var lightboxImg = document.getElementById("lightboxImg");
+      var closeBtn  = document.getElementById("lightboxClose");
+
+      // Open lightbox when a gallery item is clicked
+      document.querySelectorAll(".gallery-item").forEach(function (item) {
+        item.style.cursor = "pointer";
+        item.addEventListener("click", function () {
+          var src = item.getAttribute("data-src") || item.querySelector("img").src;
+          lightboxImg.src = src;
+          lightbox.classList.add("open");
+          document.body.style.overflow = "hidden";
+        });
+      });
+
+      // Close on button click
+      closeBtn.addEventListener("click", closeLightbox);
+
+      // Close when clicking outside image
+      lightbox.addEventListener("click", function (e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      // Close on Escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeLightbox();
+      });
+
+      function closeLightbox() {
+        lightbox.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+    })();
+  </script>
+</body>
+</html>

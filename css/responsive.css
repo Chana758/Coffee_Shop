@@ -1,0 +1,264 @@
+/* responsive.css — Breakpoints & Mobile Layouts */
+
+/* ---- Breakpoints used:
+   xl : 1200px — wide desktop
+   lg : 992px  — laptop / small desktop
+   md : 768px  — tablet (landscape)
+   sm : 576px  — tablet (portrait) / large phone
+   xs : 400px  — small phone
+---- */
+
+/* ===== xl: 1200px ===== */
+@media (max-width: 1200px) {
+  .about-img-secondary {
+    right: 0;
+    width: 160px;
+    height: 160px;
+  }
+}
+
+/* ===== lg: 992px ===== */
+@media (max-width: 992px) {
+
+  /* Navbar: show hamburger, hide desktop links */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Mobile nav menu slides down */
+  .nav-links {
+    position: fixed;
+    top: var(--navbar-h); /* !NOTE: var(--navbar-h) កំណត់កម្ពស់ Navbar */
+    left: 0;
+    right: 0;
+    background-color: var(--bg-navbar); /* !NOTE: var(--bg-navbar) ពណ៌ផ្ទៃ Navbar */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: var(--space-3) 0; /* !NOTE: var(--space-3) = 24px */
+    border-bottom: 1px solid var(--border-color); /* !NOTE: var(--border-color) ពណ៌គែម */
+    box-shadow: var(--shadow-lg); /* !NOTE: var(--shadow-lg) ស្រមោលធំ */
+    /* Hidden state */
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform var(--transition-base), opacity var(--transition-base); /* !NOTE: var(--transition-base) ល្បឿនចលនា */
+    z-index: 999;
+  }
+
+  /* JS toggles .open on #navLinks */
+  .nav-links.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-link {
+    padding: 0.9rem 2rem;
+    width: 100%;
+    text-align: center;
+    border-radius: 0;
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+  /* Hero: stack vertically */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding-top: calc(var(--navbar-h) + var(--space-5)); /* !NOTE: var(--navbar-h) + var(--space-5) = 48px */
+    padding-bottom: var(--space-6); /* !NOTE: var(--space-6) = 64px */
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-image {
+    max-width: 440px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .hero-img {
+    height: 380px;
+  }
+
+  /* About: stack vertically */
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-images {
+    padding-bottom: var(--space-5); /* !NOTE: var(--space-5) = 48px */
+  }
+
+  .about-img-main {
+    height: 380px;
+  }
+
+  .about-img-secondary {
+    width: 140px;
+    height: 140px;
+    right: 0;
+    bottom: 0;
+  }
+
+  /* Footer grid: 2 columns */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ===== md: 768px ===== */
+@media (max-width: 768px) {
+
+  /* Contact: stack vertically */
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Gallery: 2 columns */
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery-item.gi-wide {
+    grid-column: span 2;
+  }
+
+  /* Testimonial card: reduce padding */
+  .testimonial-card {
+    padding: var(--space-4); /* !NOTE: var(--space-4) = 32px */
+  }
+
+  .testimonial-text {
+    font-size: 1.05rem;
+  }
+
+  /* About stats: wrap */
+  .about-stats {
+    flex-wrap: wrap;
+    gap: var(--space-3); /* !NOTE: var(--space-3) = 24px */
+  }
+
+  /* Footer: single column */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4); /* !NOTE: var(--space-4) = 32px */
+  }
+}
+
+/* ===== sm: 576px ===== */
+@media (max-width: 576px) {
+
+  /* Reduce hero font sizes */
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-img {
+    height: 300px;
+  }
+
+  .hero-badge {
+    width: 80px;
+    height: 80px;
+    bottom: -12px;
+    left: -12px;
+  }
+
+  .badge-number {
+    font-size: 1.3rem;
+  }
+
+  /* Menu grid: single column */
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Gallery: single column */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item.gi-wide {
+    grid-column: span 1;
+  }
+
+  /* Footer: full-width single column */
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Section padding reductions */
+  .about-section,
+  .menu-section,
+  .gallery-grid,
+  .testimonial-section,
+  .contact-section {
+    padding: var(--space-6) 0; /* !NOTE: var(--space-6) = 64px */
+  }
+}
+
+/* ===== xs: 400px ===== */
+@media (max-width: 400px) {
+
+  :root {
+    --space-4: 1.5rem; /* !NOTE: var(--space-4) កែសម្រួលតាមទំហំអេក្រង់ */
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .contact-form {
+    padding: var(--space-3); /* !NOTE: var(--space-3) = 24px */
+  }
+
+  .menu-filters {
+    gap: 6px;
+  }
+
+  .filter-btn {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.82rem;
+  }
+}
+
+/* ===== Print Styles ===== */
+@media print {
+  .navbar, .hero-badge, .scroll-indicator,
+  .carousel-controls, .hamburger, .dark-toggle {
+    display: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    color: #000;
+  }
+}
+

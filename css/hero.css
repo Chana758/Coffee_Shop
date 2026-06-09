@@ -1,0 +1,153 @@
+   /* hero.css — Full-Height Hero Section */
+.hero {
+  position: relative;
+  min-height: 100vh;              /* កម្ពស់ពេញអេក្រង់ */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);            /* gap: 64px; */
+  /* padding-top គណនាដោយកម្ពស់ Navbar + 64px */
+  padding: calc(var(--navbar-h) + var(--space-6)) var(--space-4) var(--space-7);
+  max-width: var(--container-max); /* max-width: 1200px; */
+  margin-inline: auto;            /* ដាក់កណ្តាល */
+  overflow: hidden;
+}
+
+/* ---- Text Side ---- */
+.hero-content {
+  flex: 1;
+  min-width: 280px;
+  max-width: 560px;
+}
+
+.hero-tagline {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clr-primary-400);  /* color: #c08040; */
+  margin-bottom: var(--space-2);  /* margin-bottom: 16px; */
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.2rem); /* ផ្លាស់ប្តូរទំហំតាមអេក្រង់ */
+  font-family: var(--font-serif);
+  color: var(--text-heading);
+  line-height: 1.1;
+  margin-bottom: var(--space-3);  /* margin-bottom: 24px; */
+}
+
+.hero-accent {
+  font-style: italic;
+  color: var(--clr-primary-500);  /* color: #8b5e3c; */
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: var(--text-muted);       /* color: #7a5c4a (Light) / #a07860 (Dark) */
+  max-width: 480px;
+  margin-bottom: var(--space-4);  /* margin-bottom: 32px; */
+  line-height: 1.75;
+}
+
+/* ---- CTA Buttons ---- */
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);            /* gap: 16px; */
+}
+
+/* ---- Image Side ---- */
+.hero-image {
+  flex: 1;
+  min-width: 280px;
+  max-width: 520px;
+}
+
+.hero-img-wrapper {
+  position: relative;
+  border-radius: var(--radius-xl); /* border-radius: 24px; */
+  overflow: visible;              /* អនុញ្ញាតឱ្យ Badge ហៀរចេញក្រៅ */
+}
+
+.hero-img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  border-radius: var(--radius-xl); /* border-radius: 24px; */
+  box-shadow: var(--shadow-xl);    /* ស្រមោលធំខ្លាំង */
+  animation: heroFloat 6s ease-in-out infinite; /* ចលនាអណ្តែត */
+}
+
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); } /* រំកិលឡើងលើ 12px */
+}
+
+/* ---- Floating Badge ---- */
+.hero-badge {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border-radius: var(--radius-full); /* border-radius: 9999px; */
+  background-color: var(--clr-primary-500);
+  color: #fff;
+  box-shadow: var(--shadow-lg);    /* ស្រមោលធំ */
+  animation: badgeSpin 20s linear infinite; /* ចលនាវិលកង់ 20វិនាទី */
+}
+
+@keyframes badgeSpin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ទប់អក្សរមិនឱ្យវិលតាមកង់ */
+.hero-badge .badge-number,
+.hero-badge .badge-text {
+  animation: counterSpin 20s linear infinite;
+}
+
+@keyframes counterSpin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); } /* វិលបញ្ច្រាសដើម្បីរក្សាលំនឹង */
+}
+
+.badge-number { font-size: 1.6rem; font-weight: 800; line-height: 1; }
+.badge-text { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.05em; }
+
+/* ---- Scroll Indicator ---- */
+.scroll-indicator {
+  position: absolute;
+  bottom: var(--space-4);         /* 32px ពីបាត */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  opacity: 0.5;
+  transition: opacity var(--transition-fast);
+}
+
+.scroll-indicator:hover { opacity: 1; }
+
+.scroll-arrow {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-right: 2px solid var(--text-body);
+  border-bottom: 2px solid var(--text-body);
+  transform: rotate(45deg);
+  animation: scrollBounce 2s ease-in-out infinite; /* ចលនាលោតចុះឡើង */
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: rotate(45deg) translateY(0); opacity: 1; }
+  50%       { transform: rotate(45deg) translateY(6px); opacity: 0.4; }
+}

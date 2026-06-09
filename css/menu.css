@@ -1,0 +1,182 @@
+   /* menu.css — Featured Menu Section & Cards */
+.menu-section {
+  padding: var(--space-7) 0; /* !NOTE: គម្លាតលើក្រោម 96px */
+  background-color: var(--bg-section-alt); /* !NOTE: ពណ៌ផ្ទៃខាងក្រោយផ្នែកនេះ */
+}
+
+/* ---- Filter Tabs (Horizontal Scroll for Mobile) ---- */
+.menu-filters {
+  display: flex;
+  flex-wrap: nowrap; 
+  justify-content: center;
+  gap: var(--space-2); /* !NOTE: គម្លាតរវាងប៊ូតុង 16px */
+  margin-bottom: var(--space-5); /* !NOTE: គម្លាតខាងក្រោម 48px */
+  
+  overflow-x: auto;
+  padding: 0 var(--space-2) 10px; /* !NOTE: គម្លាតសងខាង 16px */
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.menu-filters::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-btn {
+  flex: 0 0 auto;
+  padding: 0.55rem 1.4rem;
+  border-radius: var(--radius-full); /* !NOTE: មូលជ្រុង 9999px */
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted); /* !NOTE: ពណ៌អក្សរស្រាល */
+  border: 2px solid var(--border-color); /* !NOTE: ពណ៌បន្ទាត់គែម */
+  background-color: var(--bg-card); /* !NOTE: ពណ៌ផ្ទៃប៊ូតុង */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  color: var(--clr-primary-500); /* !NOTE: ពណ៌ចម្បងពេលដាក់ Mouse លើ */
+  border-color: var(--clr-primary-300); /* !NOTE: ពណ៌ Primary ស្រាលជាងមុន */
+  transform: translateY(-1px);
+}
+
+.filter-btn.active {
+  color: #fff;
+  background-color: var(--clr-primary-500); /* !NOTE: ពណ៌ចម្បងពេល Active */
+  border-color: var(--clr-primary-500);
+}
+
+/* ---- Cards Grid ---- */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4); /* !NOTE: គម្លាតរវាងកាត 32px */
+}
+
+/* ---- Menu Card Item ---- */
+.menu-card {
+  background-color: var(--bg-card); /* !NOTE: ពណ៌ផ្ទៃកាត */
+  border-radius: var(--radius-lg); /* !NOTE: មូលជ្រុង 16px */
+  overflow: hidden;
+  box-shadow: var(--shadow-sm); /* !NOTE: ស្រមោលស្រាល */
+  border: 1px solid var(--border-color); /* !NOTE: ពណ៌បន្ទាត់គែម */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg); /* !NOTE: ស្រមោលធំពេលដាក់ Mouse លើ */
+}
+
+.menu-card.hidden {
+  display: none;
+}
+
+/* ---- Image Area ---- */
+.card-img-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 220px;
+}
+
+.card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.menu-card:hover .card-img-wrap img {
+  transform: scale(1.08);
+}
+
+.card-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full); /* !NOTE: មូលជ្រុង 9999px */
+  background-color: var(--clr-accent-400); /* !NOTE: ពណ៌លេចធ្លោ */
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ---- Card Content ---- */
+.card-body {
+  padding: var(--space-3); /* !NOTE: គម្លាតខាងក្នុង 24px */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1); /* !NOTE: គម្លាតរវាងធាតុ 8px */
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-2); /* !NOTE: គម្លាត 16px */
+}
+
+.card-title {
+  font-family: var(--font-serif); /* !NOTE: ពុម្ពអក្សរ Serif */
+  font-size: 1.15rem;
+  color: var(--text-heading); /* !NOTE: ពណ៌ចំណងជើង */
+}
+
+.card-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--clr-primary-500); /* !NOTE: ពណ៌ចម្បង */
+  white-space: nowrap;
+}
+
+.card-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted); /* !NOTE: ពណ៌អក្សរស្រាល */
+  line-height: 1.6;
+  flex: 1;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--space-1); /* !NOTE: គម្លាតខាងលើ 8px */
+  padding-top: var(--space-1);
+  border-top: 1px solid var(--border-color); /* !NOTE: ពណ៌បន្ទាត់គែម */
+}
+
+.card-tag {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted); /* !NOTE: ពណ៌អក្សរស្រាល */
+}
+
+.card-btn {
+  padding: 0.45rem 1.1rem;
+  border-radius: var(--radius-full); /* !NOTE: មូលជ្រុង 9999px */
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--clr-primary-500); /* !NOTE: ពណ៌ចម្បង */
+  border: 1.5px solid var(--clr-primary-300); /* !NOTE: ពណ៌ Primary ស្រាល */
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card-btn:hover {
+  background-color: var(--clr-primary-500); /* !NOTE: ពណ៌ចម្បង */
+  color: #fff;
+  border-color: var(--clr-primary-500);
+}
+
+/* ---- CTA Section ---- */
+.menu-cta {
+  text-align: center;
+  margin-top: var(--space-5); /* !NOTE: គម្លាត 48px */
+}

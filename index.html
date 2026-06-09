@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brew &amp; Soul — Artisan Coffee</title>
+
+  <!-- CSS Files (loaded in dependency order) -->
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/gallery.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/menu.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/testimonial.css" />
+  
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+
+      <!-- Logo -->
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">&#9749;</span>
+        <span class="logo-text">Brew &amp; Soul</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="pages/menu.html" class="nav-link">Menu</a></li>
+        <li><a href="pages/about.html" class="nav-link">About</a></li>
+        <li><a href="pages/gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Right Controls -->
+      <div class="nav-controls">
+        <!-- Dark Mode Toggle -->
+        <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
+          <span class="toggle-icon" id="toggleIcon">&#127769;</span>
+        </button>
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-content reveal">
+      <p class="hero-tagline">Est. 2026 &nbsp;·&nbsp; Specialty Coffee</p>
+      <h1 class="hero-title">
+        Every Cup Tells<br />
+        <span class="hero-accent">a Story</span>
+      </h1>
+      <p class="hero-description">
+        Hand-crafted espresso drinks, single-origin pour-overs, and
+        freshly baked pastries — brewed with love in the heart of the city.
+      </p>
+      <div class="hero-buttons">
+        <a href="pages/menu.html" class="btn btn-primary">Explore Menu</a>
+        <a href="pages/about.html" class="btn btn-outline">Our Story</a>
+      </div>
+    </div>
+    <div class="hero-image reveal reveal-right">
+      <div class="hero-img-wrapper">
+        <img
+          src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=800"
+          alt="A beautifully crafted latte in a ceramic cup"
+          class="hero-img"
+        />
+        <div class="hero-badge">
+          <span class="badge-number">10+</span>
+          <span class="badge-text">Years Brewing</span>
+        </div>
+      </div>
+    </div>
+    <!-- Scroll down indicator -->
+    <a href="#menu" class="scroll-indicator" aria-label="Scroll down">
+      <span class="scroll-arrow"></span>
+    </a>
+  </section>
+
+  <!-- ========== FEATURED MENU ========== -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">What We Brew</p>
+        <h2 class="section-title">Fan Favorites</h2>
+        <p class="section-subtitle">
+          Seasonal ingredients, precision extraction, and genuine passion —
+          every drink crafted to perfection.
+        </p>
+      </div>
+
+      <!-- Filter Tabs — JS will toggle .active and filter cards -->
+      <div class="menu-filters reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="espresso">Espresso</button>
+        <button class="filter-btn" data-filter="cold">Cold Brew</button>
+        <button class="filter-btn" data-filter="tea">Tea</button>
+        <button class="filter-btn" data-filter="food">Food</button>
+      </div>
+
+      <!-- Menu Cards Grid -->
+      <div class="menu-grid" id="menuGrid">
+
+        <article class="menu-card reveal" data-category="espresso">
+          <div class="card-img-wrap">
+            <img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Classic Latte" loading="lazy" />
+            <span class="card-badge">Popular</span>
+          </div>
+          <div class="card-body">
+            <div class="card-header">
+              <h3 class="card-title">Classic Latte</h3>
+              <span class="card-price">$5.50</span>
+            </div>
+            <p class="card-desc">Double espresso, steamed whole milk, micro-foam rosette.</p>
+            <div class="card-footer">
+              <span class="card-tag">Espresso</span>
+              <button class="card-btn">Order Now</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card reveal" data-category="espresso">
+        <div class="card-img-wrap">
+            <!-- Ensure this URL works or replace with a working image path -->
+            <img src="https://i.pinimg.com/1200x/0c/c8/bf/0cc8bfcc3cba9967863f5fd0c6b5e7c3.jpg" alt="Flat White" loading="lazy" />
+        </div>
+        <div class="card-body">
+            <div class="card-header">
+            <h3 class="card-title">Flat White</h3>
+            <span class="card-price">$5.00</span>
+            </div>
+            <p class="card-desc">Ristretto shots with velvety steamed milk — intense and smooth.</p>
+            <div class="card-footer">
+            <span class="card-tag">Espresso</span>
+            <button class="card-btn">Order Now</button>
+            </div>
+        </div>
+        </article>
+
+        <article class="menu-card reveal" data-category="cold">
+          <div class="card-img-wrap">
+            <img src="https://images.pexels.com/photos/2615323/pexels-photo-2615323.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Nitro Cold Brew" loading="lazy" />
+            <span class="card-badge">New</span>
+          </div>
+          <div class="card-body">
+            <div class="card-header">
+              <h3 class="card-title">Nitro Cold Brew</h3>
+              <span class="card-price">$6.00</span>
+            </div>
+            <p class="card-desc">18-hour steeped, nitrogen-infused cold brew — creamy without cream.</p>
+            <div class="card-footer">
+              <span class="card-tag">Cold Brew</span>
+              <button class="card-btn">Order Now</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card reveal" data-category="espresso">
+          <div class="card-img-wrap">
+            <img src="https://images.pexels.com/photos/1187317/pexels-photo-1187317.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cappuccino" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="card-header">
+              <h3 class="card-title">Cappuccino</h3>
+              <span class="card-price">$4.75</span>
+            </div>
+            <p class="card-desc">Equal parts espresso, steamed milk, and airy foam — a classic.</p>
+            <div class="card-footer">
+              <span class="card-tag">Espresso</span>
+              <button class="card-btn">Order Now</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card reveal" data-category="tea">
+          <div class="card-img-wrap">
+            <img src="https://images.pexels.com/photos/1638280/pexels-photo-1638280.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Matcha Latte" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="card-header">
+              <h3 class="card-title">Matcha Latte</h3>
+              <span class="card-price">$5.75</span>
+            </div>
+            <p class="card-desc">Ceremonial grade matcha whisked with steamed oat milk.</p>
+            <div class="card-footer">
+              <span class="card-tag">Tea</span>
+              <button class="card-btn">Order Now</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card reveal" data-category="food">
+          <div class="card-img-wrap">
+            <img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Avocado Toast" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="card-header">
+              <h3 class="card-title">Avocado Toast</h3>
+              <span class="card-price">$9.00</span>
+            </div>
+            <p class="card-desc">Sourdough, smashed avocado, chilli flakes, poached egg.</p>
+            <div class="card-footer">
+              <span class="card-tag">Food</span>
+              <button class="card-btn">Order Now</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="menu-cta reveal">
+        <a href="pages/menu.html" class="btn btn-primary">View Full Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section class="about-section" id="about">
+    <div class="container about-grid">
+      <div class="about-images reveal">
+        <img
+          src="https://images.pexels.com/photos/683039/pexels-photo-683039.jpeg?auto=compress&cs=tinysrgb&w=700"
+          alt="Barista crafting espresso"
+          class="about-img-main"
+        />
+        <img
+          src="https://i.pinimg.com/1200x/f8/56/d2/f856d2d30045e34f7a3d7438d81c5141.jpg"
+          alt="Coffee beans close-up"
+          class="about-img-secondary"
+        />
+      </div>
+      <div class="about-content reveal reveal-right">
+        <p class="section-eyebrow">Our Story</p>
+        <h2 class="section-title">Passion Poured Into Every Cup</h2>
+        <p class="about-text">
+          Brew &amp; Soul was born from a simple belief: great coffee changes your day.
+          We source single-origin beans directly from farms in Ethiopia, Colombia,
+          and Guatemala, building relationships that are fair and sustainable.
+        </p>
+        <p class="about-text">
+          Our baristas train for months to master extraction, temperature, and texture.
+          We believe the ritual of coffee — the grind, the bloom, the pour — is as
+          important as the final sip.
+        </p>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-number">12</span>
+            <span class="stat-label">Origin Countries</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">40+</span>
+            <span class="stat-label">Menu Items</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">50K</span>
+            <span class="stat-label">Happy Guests</span>
+          </div>
+        </div>
+        <a href="pages/about.html" class="btn btn-primary">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALLERY SECTION ========== -->
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Visual Stories</p>
+        <h2 class="section-title">Our Gallery</h2>
+      </div>
+      <div class="gallery-grid reveal">
+        <div class="gallery-item gi-wide">
+          <img src="https://images.pexels.com/photos/374885/pexels-photo-374885.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Coffee shop interior" loading="lazy" />
+          <div class="gallery-overlay"><span>Interior</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.pexels.com/photos/1600711/pexels-photo-1600711.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Latte art" loading="lazy" />
+          <div class="gallery-overlay"><span>Latte Art</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.pexels.com/photos/894695/pexels-photo-894695.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Coffee beans" loading="lazy" />
+          <div class="gallery-overlay"><span>Single Origin</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pour over coffee" loading="lazy" />
+          <div class="gallery-overlay"><span>Pour Over</span></div>
+        </div>
+        <div class="gallery-item gi-wide">
+          <img src="https://images.pexels.com/photos/2396220/pexels-photo-2396220.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Coffee and book" loading="lazy" />
+          <div class="gallery-overlay"><span>The Ritual</span></div>
+        </div>
+      </div>
+      <div class="gallery-cta reveal">
+        <a href="pages/gallery.html" class="btn btn-outline">See More Photos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="testimonial-section" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">What Guests Say</p>
+        <h2 class="section-title">Loved by Coffee Lovers</h2>
+      </div>
+      <div class="testimonial-carousel">
+        <div class="testimonial-track" id="testimonialTrack">
+
+          <div class="testimonial-card">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-text">
+              "The best flat white I've ever had — and I've been to coffee shops
+              across three continents. Brew &amp; Soul is on a different level."
+            </p>
+            <div class="testimonial-author">
+              <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Sarah M." />
+              <div>
+                <strong>Sarah M.</strong>
+                <span>Food Blogger</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-text">
+              "I work from here every morning. The ambiance, the wifi, the oat
+              milk latte — everything is absolutely perfect."
+            </p>
+            <div class="testimonial-author">
+              <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=100" alt="James K." />
+              <div>
+                <strong>James K.</strong>
+                <span>Remote Developer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-text">
+              "Their matcha latte converted me from a coffee skeptic. The staff
+              is knowledgeable, friendly, and genuinely passionate."
+            </p>
+            <div class="testimonial-author">
+              <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Priya N." />
+              <div>
+                <strong>Priya N.</strong>
+                <span>Interior Designer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-text">
+              "Nitro cold brew on a hot day — pure magic. The whole menu is
+              thoughtfully curated. My go-to spot, always."
+            </p>
+            <div class="testimonial-author">
+              <img src="https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Carlos R." />
+              <div>
+                <strong>Carlos R.</strong>
+                <span>Photographer</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Carousel Controls (dots generated by JS) -->
+        <div class="carousel-controls">
+          <button class="carousel-btn prev" id="prevBtn" aria-label="Previous">&#8592;</button>
+          <div class="carousel-dots" id="carouselDots"></div>
+          <button class="carousel-btn next" id="nextBtn" aria-label="Next">&#8594;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section class="contact-section" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-info reveal">
+        <p class="section-eyebrow">Get in Touch</p>
+        <h2 class="section-title">Visit Us Today</h2>
+        <p class="contact-desc">
+          Whether you want to plan a visit, host an event, or just say hello —
+          we'd love to hear from you.
+        </p>
+        <ul class="contact-details">
+          <li>
+            <span class="contact-icon">&#128205;</span>
+            <span>42 Roast Lane, Coffeebury, CA 94102</span>
+          </li>
+          <li>
+            <span class="contact-icon">&#128222;</span>
+            <span>(415) 555-0172</span>
+          </li>
+          <li>
+            <span class="contact-icon">&#9993;</span>
+            <span>hello@brewandsoul.com</span>
+          </li>
+          <li>
+            <span class="contact-icon">&#128336;</span>
+            <span>Mon–Fri 7am–8pm &nbsp;·&nbsp; Sat–Sun 8am–9pm</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact form — validated by form-validation.js -->
+      <form class="contact-form reveal reveal-right" id="contactForm" novalidate>
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Jane Doe" autocomplete="name" />
+          <span class="form-error" id="nameError"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="jane@example.com" autocomplete="email" />
+          <span class="form-error" id="emailError"></span>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="How can we help?" />
+          <span class="form-error" id="subjectError"></span>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell us more..."></textarea>
+          <span class="form-error" id="messageError"></span>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+        <p class="form-success" id="formSuccess"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-icon">&#9749;</span>
+          <span class="logo-text">Brew &amp; Soul</span>
+        </a>
+        <p class="footer-tagline">
+          Specialty coffee, sourced responsibly,<br />crafted with care.
+        </p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram" class="social-link">IG</a>
+          <a href="#" aria-label="Twitter" class="social-link">TW</a>
+          <a href="#" aria-label="Facebook" class="social-link">FB</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pages/menu.html">Menu</a></li>
+          <li><a href="pages/about.html">About</a></li>
+          <li><a href="pages/gallery.html">Gallery</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Menu</h4>
+        <ul>
+          <li><a href="pages/menu.html">Espresso Drinks</a></li>
+          <li><a href="pages/menu.html">Cold Brew</a></li>
+          <li><a href="pages/menu.html">Tea &amp; Matcha</a></li>
+          <li><a href="pages/menu.html">Food</a></li>
+          <li><a href="pages/menu.html">Seasonal Specials</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <ul class="hours-list">
+          <li><span>Mon – Fri</span><span>7am – 8pm</span></li>
+          <li><span>Saturday</span><span>8am – 9pm</span></li>
+          <li><span>Sunday</span><span>8am – 9pm</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Brew &amp; Soul. All rights reserved.</p>
+      <p>Made with &#9749; and pure HTML/CSS/JS</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript Files -->
+  <script src="js/darkmode.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/animation.js"></script>
+  <script src="js/form-validation.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

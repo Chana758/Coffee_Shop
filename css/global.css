@@ -1,0 +1,261 @@
+/* global.css — CSS Custom Properties, Reset, Base Styles */
+
+/* ---- 1. Color System (Light Theme) ---- */
+:root {
+  /* Primary — warm coffee brown */
+  --clr-primary-100: #f5ede4;
+  --clr-primary-200: #e8d0b8;
+  --clr-primary-300: #d4a97a;
+  --clr-primary-400: #c08040;
+  --clr-primary-500: #8b5e3c;   /* ពណ៌មេ (Main Brand Color) */
+  --clr-primary-600: #6b4423;
+  --clr-primary-700: #4a2c10;
+
+  /* Secondary — warm cream */
+  --clr-secondary-100: #fdf8f3;
+  --clr-secondary-200: #f7efe4;
+  --clr-secondary-300: #edd9c0;
+  --clr-secondary-400: #d9b896;
+
+  /* Accent — golden amber */
+  --clr-accent-300: #f0c060;
+  --clr-accent-400: #e8a820;
+  --clr-accent-500: #c98a00;
+
+  /* Semantic */
+  --clr-success: #2d7a4f;
+  --clr-warning: #b45309;
+  --clr-error:   #b91c1c;
+
+  /* Neutrals */
+  --clr-neutral-50:  #fafafa;
+  --clr-neutral-100: #f5f5f5;
+  --clr-neutral-200: #e5e5e5;
+  --clr-neutral-300: #d4d4d4;
+  --clr-neutral-400: #a3a3a3;
+  --clr-neutral-500: #737373;
+  --clr-neutral-600: #525252;
+  --clr-neutral-700: #404040;
+  --clr-neutral-800: #262626;
+  --clr-neutral-900: #171717;
+
+  /* Semantic aliases (អថេរសម្រាប់ប្តូរ Theme) */
+  --bg-page:        #fdf8f3;    /* ផ្ទៃខាងក្រោយទំព័រ */
+  --bg-section-alt: #f5ede4;    /* ផ្ទៃផ្នែកជំនួស */
+  --bg-card:        #ffffff;    /* ផ្ទៃរបស់កាត */
+  --bg-navbar:      rgba(253, 248, 243, 0.95); /* ផ្ទៃ Navbar */
+
+  --text-heading:   #1a0f0a;    /* ពណ៌ចំណងជើង */
+  --text-body:      #3d2b1e;    /* ពណ៌អត្ថបទធម្មតា */
+  --text-muted:     #7a5c4a;    /* ពណ៌អក្សរស្រាល */
+  --text-inverse:   #fdf8f3;    /* ពណ៌អក្សរផ្ទុយ */
+
+  --border-color:   #e8d0b8;    /* ពណ៌បន្ទាត់ព្រំដែន */
+  --shadow-sm:      0 1px 3px rgba(139, 94, 60, 0.08);   /* box-shadow: 0 1px 3px ... */
+  --shadow-md:      0 4px 16px rgba(139, 94, 60, 0.12);  /* box-shadow: 0 4px 16px ... */
+  --shadow-lg:      0 8px 32px rgba(139, 94, 60, 0.16);  /* box-shadow: 0 8px 32px ... */
+  --shadow-xl:      0 16px 48px rgba(139, 94, 60, 0.20); /* box-shadow: 0 16px 48px ... */
+
+  /* Typography */
+  --font-serif:    Georgia, "Times New Roman", serif;
+  --font-sans:     "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono:     "Courier New", Courier, monospace;
+
+  /* Spacing — 8px grid (ប្រព័ន្ធគម្លាត) */
+  --space-1:  0.5rem;   /* ស្មើនឹង: 8px */
+  --space-2:  1rem;     /* ស្មើនឹង: 16px */
+  --space-3:  1.5rem;   /* ស្មើនឹង: 24px */
+  --space-4:  2rem;     /* ស្មើនឹង: 32px */
+  --space-5:  3rem;     /* ស្មើនឹង: 48px */
+  --space-6:  4rem;     /* ស្មើនឹង: 64px */
+  --space-7:  6rem;     /* ស្មើនឹង: 96px */
+
+  /* Border radius (កម្រិតកាច់ជ្រុង) */
+  --radius-sm:  4px;    /* border-radius: 4px; */
+  --radius-md:  8px;    /* border-radius: 8px; */
+  --radius-lg:  16px;   /* border-radius: 16px; */
+  --radius-xl:  24px;   /* border-radius: 24px; */
+  --radius-full: 9999px; /* border-radius: 9999px; */
+
+  /* Transitions */
+  --transition-fast:   150ms ease; /* transition: 0.15s ease; */
+  --transition-base:   300ms ease; /* transition: 0.3s ease; */
+  --transition-slow:   500ms ease; /* transition: 0.5s ease; */
+
+  /* Layout */
+  --container-max: 1200px; /* max-width: 1200px; */
+  --navbar-h:      72px;   /* height: 72px; */
+}
+
+/* ---- 2. Dark Theme ---- */
+[data-theme="dark"] {
+  --bg-page:        #1a120c;
+  --bg-section-alt: #221810;
+  --bg-card:        #2a1d14;
+  --bg-navbar:      rgba(26, 18, 12, 0.96);
+
+  --text-heading:   #f5ede4;
+  --text-body:      #d4b49a;
+  --text-muted:     #a07860;
+  --text-inverse:   #1a0f0a;
+
+  --border-color:   #3d2b1e;
+  --shadow-sm:      0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md:      0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg:      0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-xl:      0 16px 48px rgba(0, 0, 0, 0.6);
+
+  --clr-primary-300: #fdfcfb;
+  --clr-primary-400: #f6f1ed;
+}
+
+/* ---- 3. CSS Reset ---- */
+*, *::before, *::after {
+  box-sizing: border-box; /* រក្សាតម្លៃ width/height */
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* រមូរទំព័រដោយរលូន */
+  scroll-padding-top: var(--navbar-h); /* ទីតាំង anchor ស្មើនឹង 72px */
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-body);
+  background-color: var(--bg-page);
+  transition: background-color var(--transition-slow), color var(--transition-slow);
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+/* ---- 4. Typography Scale ---- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--text-heading);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* ប្រើ clamp ដើម្បីឱ្យអក្សររីកតូច-ធំ តាមអេក្រង់ដោយស្វ័យប្រវត្តិ */
+h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 700; }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700; }
+h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); font-weight: 600; }
+h4 { font-size: 1.1rem; font-weight: 600; }
+
+p { line-height: 1.7; }
+
+/* ---- 5. Reusable Layout Utility ---- */
+.container {
+  max-width: var(--container-max); /* max-width: 1200px; */
+  margin-inline: auto;             /* margin-left/right: auto; (ដាក់កណ្តាល) */
+  padding-inline: var(--space-4);  /* padding-left/right: 32px; */
+}
+
+/* ---- 6. Shared Section Header Styles ---- */
+.section-header {
+  text-align: center;
+  max-width: 600px;                /* max-width: 600px; */
+  margin-inline: auto;
+  margin-bottom: var(--space-5);   /* margin-bottom: 48px; */
+}
+
+.section-eyebrow {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--clr-primary-400);
+  margin-bottom: var(--space-1);   /* margin-bottom: 8px; */
+}
+
+.section-title { color: var(--text-heading); margin-bottom: var(--space-2); } /* margin-bottom: 16px; */
+.section-subtitle { color: var(--text-muted); font-size: 1.05rem; }
+
+/* ---- 7. Shared Button Styles ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius-full); /* border-radius: 9999px; */
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-base);
+  cursor: pointer;
+}
+
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+
+.btn-primary {
+  background-color: var(--clr-primary-500); /* background-color: #8b5e3c; */
+  color: #fff;
+  box-shadow: var(--shadow-md);            /* box-shadow: 0 4px 16px ...; */
+}
+
+.btn-primary:hover {
+  background-color: var(--clr-primary-600); /* background-color: #6b4423; */
+  box-shadow: var(--shadow-lg);             /* box-shadow: 0 8px 32px ...; */
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--clr-primary-500);
+  border: 2px solid var(--clr-primary-500);
+}
+
+.btn-outline:hover {
+  background-color: var(--clr-primary-500);
+  color: #fff;
+}
+
+.btn-full { width: 100%; justify-content: center; }
+
+/* ---- 8. Scroll Reveal Animations ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px); /* កម្រិតចលនាចុះក្រោម 32px */
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.reveal-right { transform: translateX(40px); } /* រំកិលទៅស្តាំ 40px */
+.reveal.visible { opacity: 1; transform: translate(0, 0); } /* បង្ហាញខ្លួននៅទីតាំងដើម */
+
+/* Stagger children inside a reveal container */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(24px); /* រំកិលចុះក្រោម 24px */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal-stagger.visible > *:nth-child(1) { 
+  transition-delay: 0.1s; 
+}
+.reveal-stagger.visible > *:nth-child(2) { 
+  transition-delay: 0.2s; 
+}
+.reveal-stagger.visible > *:nth-child(3) { 
+  transition-delay: 0.3s; 
+}
+.reveal-stagger.visible > *:nth-child(4) { 
+  transition-delay: 0.4s; 
+}
+.reveal-stagger.visible > *:nth-child(5) { 
+  transition-delay: 0.5s; 
+}
+.reveal-stagger.visible > *:nth-child(6) { 
+  transition-delay: 0.6s; 
+}
+
+.reveal-stagger.visible > * { 
+  opacity: 1; transform: translateY(0); 
+}

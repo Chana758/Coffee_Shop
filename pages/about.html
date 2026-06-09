@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Brew &amp; Soul</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/about.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+  <style>
+    .page-hero {
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: calc(var(--navbar-h) + var(--space-6)) var(--space-4) var(--space-6);
+      background: linear-gradient(135deg, var(--clr-primary-600), var(--clr-primary-500));
+      color: #fff;
+    }
+    .page-hero h1 { color: #fff; }
+    .page-hero p  { color: rgba(255,255,255,0.82); margin-top: var(--space-2); }
+
+    /* Team Section */
+    .team-section { padding: var(--space-7) 0; background-color: var(--bg-section-alt); }
+    .team-grid {
+      display: flex;
+      justify-content: center;
+      padding: 0 var(--space-4);
+    }
+    .team-card {
+      background-color: var(--bg-card);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-color);
+      transition: transform var(--transition-base);
+      max-width: 400px;
+      width: 100%;
+    }
+    .team-card:hover { transform: translateY(-6px); }
+    .team-card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .team-card-body { padding: var(--space-4); }
+    .team-card-body h3 { font-size: 1.5rem; margin-bottom: 5px; }
+    .team-card-body p  { font-size: 1rem; color: var(--text-muted); font-style: italic; }
+
+    /* Values Section */
+    .values-section { padding: var(--space-7) 0; }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: var(--space-4);
+    }
+    .value-card {
+      padding: var(--space-4);
+      background-color: var(--bg-card);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+    .value-icon { font-size: 2.5rem; margin-bottom: var(--space-2); }
+    .value-card h3 { margin-bottom: var(--space-1); }
+    .value-card p  { font-size: 0.92rem; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <span class="logo-icon">&#9749;</span>
+        <span class="logo-text">Brew &amp; Soul</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="menu.html"    class="nav-link">Menu</a></li>
+        <li><a href="about.html"   class="nav-link active">About</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
+          <span class="toggle-icon" id="toggleIcon">&#127769;</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div>
+      <p class="section-eyebrow" style="color:rgba(255,255,255,0.7)">Who We Are</p>
+      <h1>Our Story</h1>
+      <p>A decade of craft, community, and exceptional coffee.</p>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="container about-grid">
+      <div class="about-images reveal">
+        <img src="https://images.pexels.com/photos/683039/pexels-photo-683039.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Barista crafting espresso" class="about-img-main" />
+        <img src="https://i.pinimg.com/1200x/c4/73/7e/c4737e013a673e196416210867f9b1f8.jpg" alt="Coffee beans close-up" class="about-img-secondary" />
+      </div>
+      <div class="about-content reveal reveal-right">
+        <p class="section-eyebrow">Since 2012</p>
+        <h2 class="section-title">Passion Poured Into Every Cup</h2>
+        <p class="about-text">Brew &amp; Soul was founded with a vision to bring specialty coffee closer to the community.</p>
+        <p class="about-text">Today, I serve hundreds of guests daily while maintaining the same commitment to quality.</p>
+        <div class="about-stats">
+          <div class="stat"><span class="stat-number">12</span><span class="stat-label">Origin Countries</span></div>
+          <div class="stat"><span class="stat-number">40+</span><span class="stat-label">Menu Items</span></div>
+          <div class="stat"><span class="stat-number">50K</span><span class="stat-label">Happy Guests</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="values-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">What Drives Us</p>
+        <h2 class="section-title">Our Values</h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-card reveal">
+          <div class="value-icon">&#127807;</div>
+          <h3>Sustainability</h3>
+          <p>Carbon-neutral operations and compostable packaging.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-icon">&#129309;</div>
+          <h3>Direct Trade</h3>
+          <p>Fair prices to farmers and transparent supply chains.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-icon">&#9749;</div>
+          <h3>Craft &amp; Quality</h3>
+          <p>Every drink made to order by experts.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-icon">&#127968;</div>
+          <h3>Community</h3>
+          <p>A space where everyone feels genuinely welcome.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team-section">
+    <div class="container">
+      <div class="section-header reveal" style="text-align: center; margin-bottom: var(--space-4);">
+        <p class="section-eyebrow">The Founder</p>
+        <h2 class="section-title">Meet the Creator</h2>
+      </div>
+      <div class="team-grid">
+        <div class="team-card reveal">
+          <img src="/images/channa.jpg" alt="Sam Channa" />
+          <div class="team-card-body">
+            <h3>Sam Channa</h3>
+            <p>Founder &amp; Head Barista</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo">
+          <span class="logo-icon">&#9749;</span>
+          <span class="logo-text">Brew &amp; Soul</span>
+        </a>
+        <p class="footer-tagline">Specialty coffee, sourced responsibly,<br />crafted with care.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <ul class="hours-list">
+          <li><span>Mon – Fri</span><span>7am – 8pm</span></li>
+          <li><span>Sat – Sun</span><span>8am – 9pm</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Brew &amp; Soul. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/darkmode.js"></script>
+  <script src="../js/navbar.js"></script>
+  <script src="../js/animation.js"></script>
+</body>
+</html>
