@@ -8,9 +8,7 @@
 (function () {
   "use strict";
 
-  // ============================================================
   // 1. MENU FILTER TABS
-  // ============================================================
   // Filter .menu-card elements by their data-category attribute.
   // Active filter button is highlighted; non-matching cards are hidden.
 
@@ -49,9 +47,7 @@
 
   }
 
-  // ============================================================
   // 2. TESTIMONIAL CAROUSEL
-  // ============================================================
   // A simple manual + auto-advancing carousel.
   // The .testimonial-track is translated horizontally to show one card at a time.
 
@@ -138,9 +134,7 @@
 
   }
 
-  // ============================================================
   // 3. "ORDER NOW" BUTTON — feedback for demo purposes
-  // ============================================================
 
   document.querySelectorAll(".card-btn").forEach(function (btn) {
     btn.addEventListener("click", function () {

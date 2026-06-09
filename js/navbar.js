@@ -1,4 +1,9 @@
+
+// បង្កើត Function មួយ ហើយរត់ភ្លាមៗ
+// ដើម្បីកុំឲ្យ Variable ខាងក្នុងប៉ះពាល់ Global Scope
 (function () {
+  // បើក Strict Mode
+  // ជួយចាប់ Error មួយចំនួន និងសរសេរកូដឲ្យមានស្តង់ដារ
   "use strict";
 
   const navbar = document.getElementById("navbar");
@@ -26,14 +31,4 @@
     }
   });
 
-  // ៣. បង្ហាញ Active State
-  const currentPage = window.location.pathname.split("/").pop() || "index.html";
-  document.querySelectorAll(".nav-link").forEach(link => {
-    // ពិនិត្យមើលថាតើ href របស់ Link ត្រូវនឹងទំព័រដែលកំពុងបើកដែរឬទេ
-    if (link.getAttribute("href").includes(currentPage)) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
-    }
-  });
 })();

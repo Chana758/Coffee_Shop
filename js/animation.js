@@ -1,7 +1,4 @@
-/* ==========================================================
-   animation.js — Scroll Reveal using Intersection Observer
-   ========================================================== */
-
+// animation.js — Scroll Reveal using Intersection Observer
 (function () {
   "use strict";
 
