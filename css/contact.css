@@ -1,15 +1,15 @@
 
 /* contact.css — Contact Section & Form */
 .contact-section {
-  padding: var(--space-7) 0;      /* padding: 96px 0; */
-  background-color: var(--bg-section-alt); /* ពណ៌ផ្ទៃខាងក្រោយផ្នែកនេះ */
+  padding: var(--space-7) 0;       /* padding: 96px 0; */
+  background-color: var(--bg-section-alt); /* Background color for this section */
 }
 
 /* ---- Two-column grid ---- */
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1.2fr; /* បែងចែកជួរ៖ ឆ្វេងតូចជាងស្តាំបន្តិច */
-  gap: var(--space-6);            /* gap: 64px; */
+  grid-template-columns: 1fr 1.2fr; /* Divide columns: left is slightly narrower than right */
+  gap: var(--space-6);              /* gap: 64px; */
   align-items: start;
 }
 
@@ -17,11 +17,11 @@
 .contact-info {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);            /* gap: 24px; */
+  gap: var(--space-3);              /* gap: 24px; */
 }
 
 .contact-desc {
-  color: var(--text-muted);       /* color: #7a5c4a (Light) / #a07860 (Dark) */
+  color: var(--text-muted);         /* color: #7a5c4a (Light) / #a07860 (Dark) */
   font-size: 1.02rem;
   line-height: 1.75;
 }
@@ -30,14 +30,14 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);            /* gap: 16px; */
-  margin-top: var(--space-1);     /* margin-top: 8px; */
+  gap: var(--space-2);              /* gap: 16px; */
+  margin-top: var(--space-1);       /* margin-top: 8px; */
 }
 
 .contact-details li {
   display: flex;
   align-items: flex-start;
-  gap: var(--space-2);            /* gap: 16px; */
+  gap: var(--space-2);              /* gap: 16px; */
   font-size: 0.95rem;
   color: var(--text-body);
   line-height: 1.6;
@@ -46,26 +46,26 @@
 .contact-icon {
   font-size: 1.2rem;
   line-height: 1.4;
-  flex-shrink: 0;                 /* ការពារ icon មិនឱ្យកន្ត្រាក់ពេលអក្សរច្រើន */
+  flex-shrink: 0;                   /* Prevent the icon from shrinking when the text is long */
 }
 
 /* ---- Contact Form ---- */
 .contact-form {
-  background-color: var(--bg-card); /* ពណ៌កាតស (White/Dark Brown) */
+  background-color: var(--bg-card); /* Card background color (White/Dark Brown) */
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-xl);   /* border-radius: 24px; */
-  padding: var(--space-5);           /* padding: 48px; */
-  box-shadow: var(--shadow-md);      /* ស្រមោលមធ្យម */
+  border-radius: var(--radius-xl);  /* border-radius: 24px; */
+  padding: var(--space-5);          /* padding: 48px; */
+  box-shadow: var(--shadow-md);     /* Medium shadow */
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);               /* gap: 24px; */
+  gap: var(--space-3);              /* gap: 24px; */
 }
 
 /* ---- Form Group ---- */
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 6px;                          /* គម្លាតរវាង Label និង Input */
+  gap: 6px;                         /* Spacing between the label and input */
 }
 
 .form-group label {
@@ -78,9 +78,9 @@
 /* Shared input / textarea styles */
 .form-group input,
 .form-group textarea {
-  padding: 0.75rem 1rem;             /* 12px 16px */
+  padding: 0.75rem 1rem;            /* 12px 16px */
   border: 1.5px solid var(--border-color);
-  border-radius: var(--radius-md);    /* border-radius: 8px; */
+  border-radius: var(--radius-md);  /* border-radius: 8px; */
   background-color: var(--bg-page);
   color: var(--text-body);
   font-family: var(--font-sans);
@@ -92,21 +92,21 @@
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: var(--clr-primary-400); /* ពណ៌ពេលចុចសរសេរ */
-  box-shadow: 0 0 0 3px rgba(139, 94, 60, 0.15); /* ស្រមោលតូចពេល Focus */
+  border-color: var(--clr-primary-400); /* Border color when the field is focused */
+  box-shadow: 0 0 0 3px rgba(139, 94, 60, 0.15); /* Subtle shadow when focused */
 }
 
 /* Error state — applied by form-validation.js */
 .form-group input.error,
 .form-group textarea.error {
-  border-color: var(--clr-error);    /* ប្តូរពណ៌បន្ទាត់ទៅក្រហមពេល Error */
+  border-color: var(--clr-error);   /* Change the border color to red when an error occurs */
   box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.1);
 }
 
 /* ---- Validation Messages ---- */
 .form-error {
   font-size: 0.82rem;
-  color: var(--clr-error);           /* ពណ៌ក្រហម (Error color) */
+  color: var(--clr-error);          /* Red color for error messages */
   font-weight: 500;
   min-height: 1rem;
   display: block;
@@ -115,7 +115,7 @@
 /* Success message shown after submission */
 .form-success {
   text-align: center;
-  color: var(--clr-success);         /* ពណ៌បៃតង (Success color) */
+  color: var(--clr-success);        /* Green color for success messages */
   font-weight: 600;
   font-size: 0.95rem;
   min-height: 1.2rem;

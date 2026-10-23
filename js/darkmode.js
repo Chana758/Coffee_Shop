@@ -1,55 +1,36 @@
-/* ==========================================================
-   darkmode.js — Dark / Light Mode Toggle
-   ========================================================== */
-
+/* darkmode.js — Light/dark theme toggle */
 (function () {
-  "use strict";
+  const KEY  = "brewsoul-theme";        // localStorage key
+  const root = document.documentElement; // <html> element
 
-  const STORAGE_KEY = "brewsoul-theme";
+  // Saved theme first, otherwise follow the system setting
+  const getTheme = () =>
+    localStorage.getItem(KEY) ||
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
 
-  // --- 1. Get stored preference or use system preference ---
-  function getPreferredTheme() {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) return stored;
-    // Fall back to OS-level preference
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-  }
+  // Apply a theme, save it, and update the toggle icon
+  const apply = (theme) => {
+    root.setAttribute("data-theme", theme);
+    localStorage.setItem(KEY, theme);
 
-  // --- 2. Apply theme to the <html> element ---
-  function applyTheme(theme) {
-    document.documentElement.setAttribute("data-theme", theme);
-    // Update button icon
     const icon = document.getElementById("toggleIcon");
-    if (icon) {
-      icon.textContent = theme === "dark" ? "\u2600\uFE0F" : "\uD83C\uDF19";
-    }
-    // Store preference
-    localStorage.setItem(STORAGE_KEY, theme);
-  }
+    if (icon) icon.textContent = theme === "dark" ? "☀️" : "🌙";
+  };
 
-  // --- 3. Toggle between light and dark ---
-  function toggleTheme() {
-    const current = document.documentElement.getAttribute("data-theme");
-    applyTheme(current === "dark" ? "light" : "dark");
-  }
+  // Switch between dark and light
+  const toggle = () =>
+    apply(root.getAttribute("data-theme") === "dark" ? "light" : "dark");
 
-  // --- 4. Wire up the toggle button ---
-  const btn = document.getElementById("darkToggle");
-  if (btn) {
-    btn.addEventListener("click", toggleTheme);
-  }
+  // Click the toggle button
+  document.getElementById("darkToggle")?.addEventListener("click", toggle);
 
-  // --- 5. Apply saved theme immediately (prevents flash of wrong theme) ---
-  applyTheme(getPreferredTheme());
+  // Set the theme on page load
+  apply(getTheme());
 
-  // --- 6. Respect OS theme changes in real time ---
-  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function (e) {
-    // Only auto-follow OS if user hasn't manually set a preference
-    if (!localStorage.getItem(STORAGE_KEY)) {
-      applyTheme(e.matches ? "dark" : "light");
+  // Follow system changes only if the user never chose a theme
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+    if (!localStorage.getItem(KEY)) {
+      apply(e.matches ? "dark" : "light");
     }
   });
-
 })();

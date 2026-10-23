@@ -1,3 +1,4 @@
+
 /* global.css — CSS Custom Properties, Reset, Base Styles */
 
 /* ---- 1. Color System (Light Theme) ---- */
@@ -7,7 +8,7 @@
   --clr-primary-200: #e8d0b8;
   --clr-primary-300: #d4a97a;
   --clr-primary-400: #c08040;
-  --clr-primary-500: #8b5e3c;   /* ពណ៌មេ (Main Brand Color) */
+  --clr-primary-500: #8b5e3c;   /* Main brand color */
   --clr-primary-600: #6b4423;
   --clr-primary-700: #4a2c10;
 
@@ -39,18 +40,18 @@
   --clr-neutral-800: #262626;
   --clr-neutral-900: #171717;
 
-  /* Semantic aliases (អថេរសម្រាប់ប្តូរ Theme) */
-  --bg-page:        #fdf8f3;    /* ផ្ទៃខាងក្រោយទំព័រ */
-  --bg-section-alt: #f5ede4;    /* ផ្ទៃផ្នែកជំនួស */
-  --bg-card:        #ffffff;    /* ផ្ទៃរបស់កាត */
-  --bg-navbar:      rgba(253, 248, 243, 0.95); /* ផ្ទៃ Navbar */
+  /* Semantic aliases (variables for switching themes) */
+  --bg-page:        #fdf8f3;    /* Page background */
+  --bg-section-alt: #f5ede4;    /* Alternate section background */
+  --bg-card:        #ffffff;    /* Card background */
+  --bg-navbar:      rgba(253, 248, 243, 0.95); /* Navbar background */
 
-  --text-heading:   #1a0f0a;    /* ពណ៌ចំណងជើង */
-  --text-body:      #3d2b1e;    /* ពណ៌អត្ថបទធម្មតា */
-  --text-muted:     #7a5c4a;    /* ពណ៌អក្សរស្រាល */
-  --text-inverse:   #fdf8f3;    /* ពណ៌អក្សរផ្ទុយ */
+  --text-heading:   #1a0f0a;    /* Heading text color */
+  --text-body:      #3d2b1e;    /* Body text color */
+  --text-muted:     #7a5c4a;    /* Muted text color */
+  --text-inverse:   #fdf8f3;    /* Inverse text color */
 
-  --border-color:   #e8d0b8;    /* ពណ៌បន្ទាត់ព្រំដែន */
+  --border-color:   #e8d0b8;    /* Border color */
   --shadow-sm:      0 1px 3px rgba(139, 94, 60, 0.08);   /* box-shadow: 0 1px 3px ... */
   --shadow-md:      0 4px 16px rgba(139, 94, 60, 0.12);  /* box-shadow: 0 4px 16px ... */
   --shadow-lg:      0 8px 32px rgba(139, 94, 60, 0.16);  /* box-shadow: 0 8px 32px ... */
@@ -61,16 +62,16 @@
   --font-sans:     "Segoe UI", system-ui, -apple-system, sans-serif;
   --font-mono:     "Courier New", Courier, monospace;
 
-  /* Spacing — 8px grid (ប្រព័ន្ធគម្លាត) */
-  --space-1:  0.5rem;   /* ស្មើនឹង: 8px */
-  --space-2:  1rem;     /* ស្មើនឹង: 16px */
-  --space-3:  1.5rem;   /* ស្មើនឹង: 24px */
-  --space-4:  2rem;     /* ស្មើនឹង: 32px */
-  --space-5:  3rem;     /* ស្មើនឹង: 48px */
-  --space-6:  4rem;     /* ស្មើនឹង: 64px */
-  --space-7:  6rem;     /* ស្មើនឹង: 96px */
+  /* Spacing — 8px grid system */
+  --space-1:  0.5rem;   /* Equivalent to: 8px */
+  --space-2:  1rem;     /* Equivalent to: 16px */
+  --space-3:  1.5rem;   /* Equivalent to: 24px */
+  --space-4:  2rem;     /* Equivalent to: 32px */
+  --space-5:  3rem;     /* Equivalent to: 48px */
+  --space-6:  4rem;     /* Equivalent to: 64px */
+  --space-7:  6rem;     /* Equivalent to: 96px */
 
-  /* Border radius (កម្រិតកាច់ជ្រុង) */
+  /* Border radius — corner rounding levels */
   --radius-sm:  4px;    /* border-radius: 4px; */
   --radius-md:  8px;    /* border-radius: 8px; */
   --radius-lg:  16px;   /* border-radius: 16px; */
@@ -111,14 +112,14 @@
 
 /* ---- 3. CSS Reset ---- */
 *, *::before, *::after {
-  box-sizing: border-box; /* រក្សាតម្លៃ width/height */
+  box-sizing: border-box; /* Keep width and height calculations consistent */
   margin: 0;
   padding: 0;
 }
 
 html {
-  scroll-behavior: smooth; /* រមូរទំព័រដោយរលូន */
-  scroll-padding-top: var(--navbar-h); /* ទីតាំង anchor ស្មើនឹង 72px */
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+  scroll-padding-top: var(--navbar-h); /* Set anchor offset to 72px */
   font-size: 16px;
 }
 
@@ -132,10 +133,27 @@ body {
   overflow-x: hidden;
 }
 
-img { display: block; max-width: 100%; height: auto; }
-a { color: inherit; text-decoration: none; }
-ul { list-style: none; }
-button { cursor: pointer; border: none; background: none; font-family: inherit; }
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
 
 /* ---- 4. Typography Scale ---- */
 h1, h2, h3, h4, h5, h6 {
@@ -145,7 +163,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
-/* ប្រើ clamp ដើម្បីឱ្យអក្សររីកតូច-ធំ តាមអេក្រង់ដោយស្វ័យប្រវត្តិ */
+/* Use clamp() to automatically scale font sizes based on screen size */
 h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 700; }
 h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700; }
 h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); font-weight: 600; }
@@ -156,7 +174,7 @@ p { line-height: 1.7; }
 /* ---- 5. Reusable Layout Utility ---- */
 .container {
   max-width: var(--container-max); /* max-width: 1200px; */
-  margin-inline: auto;             /* margin-left/right: auto; (ដាក់កណ្តាល) */
+  margin-inline: auto;             /* margin-left/right: auto; (center the container) */
   padding-inline: var(--space-4);  /* padding-left/right: 32px; */
 }
 
@@ -177,8 +195,15 @@ p { line-height: 1.7; }
   margin-bottom: var(--space-1);   /* margin-bottom: 8px; */
 }
 
-.section-title { color: var(--text-heading); margin-bottom: var(--space-2); } /* margin-bottom: 16px; */
-.section-subtitle { color: var(--text-muted); font-size: 1.05rem; }
+.section-title {
+  color: var(--text-heading);
+  margin-bottom: var(--space-2);
+} /* margin-bottom: 16px; */
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
 
 /* ---- 7. Shared Button Styles ---- */
 .btn {
@@ -199,12 +224,12 @@ p { line-height: 1.7; }
 .btn-primary {
   background-color: var(--clr-primary-500); /* background-color: #8b5e3c; */
   color: #fff;
-  box-shadow: var(--shadow-md);            /* box-shadow: 0 4px 16px ...; */
+  box-shadow: var(--shadow-md); /* box-shadow: 0 4px 16px ...; */
 }
 
 .btn-primary:hover {
   background-color: var(--clr-primary-600); /* background-color: #6b4423; */
-  box-shadow: var(--shadow-lg);             /* box-shadow: 0 8px 32px ...; */
+  box-shadow: var(--shadow-lg); /* box-shadow: 0 8px 32px ...; */
 }
 
 .btn-outline {
@@ -223,39 +248,59 @@ p { line-height: 1.7; }
 /* ---- 8. Scroll Reveal Animations ---- */
 .reveal {
   opacity: 0;
-  transform: translateY(32px); /* កម្រិតចលនាចុះក្រោម 32px */
+  transform: translateY(32px); /* Move the element downward by 32px */
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
-.reveal.reveal-right { transform: translateX(40px); } /* រំកិលទៅស្តាំ 40px */
-.reveal.visible { opacity: 1; transform: translate(0, 0); } /* បង្ហាញខ្លួននៅទីតាំងដើម */
+.reveal.reveal-right {
+  transform: translateX(40px);
+} /* Move the element 40px to the right */
+
+.reveal.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+} /* Show the element in its original position */
 
 /* Stagger children inside a reveal container */
 .reveal-stagger > * {
   opacity: 0;
-  transform: translateY(24px); /* រំកិលចុះក្រោម 24px */
+  transform: translateY(24px); /* Move elements downward by 24px */
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.reveal-stagger.visible > *:nth-child(1) { 
-  transition-delay: 0.1s; 
-}
-.reveal-stagger.visible > *:nth-child(2) { 
-  transition-delay: 0.2s; 
-}
-.reveal-stagger.visible > *:nth-child(3) { 
-  transition-delay: 0.3s; 
-}
-.reveal-stagger.visible > *:nth-child(4) { 
-  transition-delay: 0.4s; 
-}
-.reveal-stagger.visible > *:nth-child(5) { 
-  transition-delay: 0.5s; 
-}
-.reveal-stagger.visible > *:nth-child(6) { 
-  transition-delay: 0.6s; 
+.reveal-stagger.visible > *:nth-child(1) {
+  transition-delay: 0.1s;
 }
 
-.reveal-stagger.visible > * { 
-  opacity: 1; transform: translateY(0); 
+.reveal-stagger.visible > *:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.reveal-stagger.visible > *:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.reveal-stagger.visible > *:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.reveal-stagger.visible > *:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
+.reveal-stagger.visible > *:nth-child(6) {
+  transition-delay: 0.6s;
+}
+
+.reveal-stagger.visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ensure buttons are not blocked by other elements */
+.btn-prev,
+.btn-next {
+  pointer-events: auto; /* Ensure the buttons can receive click events */
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent; /* Remove the gray tap highlight on iPhone */
 }

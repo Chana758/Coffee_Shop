@@ -1,15 +1,18 @@
-   /* hero.css — Full-Height Hero Section */
+
+/* hero.css — Full-Height Hero Section */
 .hero {
   position: relative;
-  min-height: 100vh;              /* កម្ពស់ពេញអេក្រង់ */
+  min-height: 100vh;               /* Full viewport height */
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-6);            /* gap: 64px; */
-  /* padding-top គណនាដោយកម្ពស់ Navbar + 64px */
+  gap: var(--space-6);             /* gap: 64px; */
+
+  /* Calculate top padding using the navbar height plus 64px */
   padding: calc(var(--navbar-h) + var(--space-6)) var(--space-4) var(--space-7);
+
   max-width: var(--container-max); /* max-width: 1200px; */
-  margin-inline: auto;            /* ដាក់កណ្តាល */
+  margin-inline: auto;             /* Center the container */
   overflow: hidden;
 }
 
@@ -25,12 +28,12 @@
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--clr-primary-400);  /* color: #c08040; */
+  color: var(--clr-primary-400);   /* color: #c08040; */
   margin-bottom: var(--space-2);  /* margin-bottom: 16px; */
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 6vw, 4.2rem); /* ផ្លាស់ប្តូរទំហំតាមអេក្រង់ */
+  font-size: clamp(2.5rem, 6vw, 4.2rem); /* Responsive font size based on screen width */
   font-family: var(--font-serif);
   color: var(--text-heading);
   line-height: 1.1;
@@ -67,7 +70,7 @@
 .hero-img-wrapper {
   position: relative;
   border-radius: var(--radius-xl); /* border-radius: 24px; */
-  overflow: visible;              /* អនុញ្ញាតឱ្យ Badge ហៀរចេញក្រៅ */
+  overflow: visible;               /* Allow the badge to extend beyond the container */
 }
 
 .hero-img {
@@ -75,13 +78,13 @@
   height: 520px;
   object-fit: cover;
   border-radius: var(--radius-xl); /* border-radius: 24px; */
-  box-shadow: var(--shadow-xl);    /* ស្រមោលធំខ្លាំង */
-  animation: heroFloat 6s ease-in-out infinite; /* ចលនាអណ្តែត */
+  box-shadow: var(--shadow-xl);    /* Extra-large shadow */
+  animation: heroFloat 6s ease-in-out infinite; /* Floating animation */
 }
 
 @keyframes heroFloat {
   0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-12px); } /* រំកិលឡើងលើ 12px */
+  50%       { transform: translateY(-12px); } /* Move upward by 12px */
 }
 
 /* ---- Floating Badge ---- */
@@ -98,8 +101,8 @@
   border-radius: var(--radius-full); /* border-radius: 9999px; */
   background-color: var(--clr-primary-500);
   color: #fff;
-  box-shadow: var(--shadow-lg);    /* ស្រមោលធំ */
-  animation: badgeSpin 20s linear infinite; /* ចលនាវិលកង់ 20វិនាទី */
+  box-shadow: var(--shadow-lg);     /* Large shadow */
+  animation: badgeSpin 20s linear infinite; /* Rotate continuously every 20 seconds */
 }
 
 @keyframes badgeSpin {
@@ -107,7 +110,7 @@
   100% { transform: rotate(360deg); }
 }
 
-/* ទប់អក្សរមិនឱ្យវិលតាមកង់ */
+/* Counter-rotate the text to keep it from spinning with the badge */
 .hero-badge .badge-number,
 .hero-badge .badge-text {
   animation: counterSpin 20s linear infinite;
@@ -115,7 +118,7 @@
 
 @keyframes counterSpin {
   0%   { transform: rotate(0deg); }
-  100% { transform: rotate(-360deg); } /* វិលបញ្ច្រាសដើម្បីរក្សាលំនឹង */
+  100% { transform: rotate(-360deg); } /* Rotate in the opposite direction to keep the text upright */
 }
 
 .badge-number { font-size: 1.6rem; font-weight: 800; line-height: 1; }
@@ -124,7 +127,7 @@
 /* ---- Scroll Indicator ---- */
 .scroll-indicator {
   position: absolute;
-  bottom: var(--space-4);         /* 32px ពីបាត */
+  bottom: var(--space-4);         /* 32px from the bottom */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -144,7 +147,7 @@
   border-right: 2px solid var(--text-body);
   border-bottom: 2px solid var(--text-body);
   transform: rotate(45deg);
-  animation: scrollBounce 2s ease-in-out infinite; /* ចលនាលោតចុះឡើង */
+  animation: scrollBounce 2s ease-in-out infinite; /* Bounce up and down */
 }
 
 @keyframes scrollBounce {

@@ -1,18 +1,19 @@
+
 /* about.css — About Section */
 .about-section {
-  padding: var(--space-7) 0;      /* padding: 96px 0; */
+  padding: var(--space-7) 0;       /* padding: 96px 0; */
   background-color: var(--bg-page); /* background: #fdf8f3 (Light) / #1a120c (Dark) */
 }
 
-/* ---- Two-column grid layout ---- */
+/* Two-column grid layout */
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* បែងចែកជា ២ ជួរស្មើគ្នា */
-  align-items: center;            /* ដាក់ធាតុឱ្យនៅចំកណ្តាលតាមបញ្ឈរ */
-  gap: var(--space-6);            /* gap: 64px; */
+  grid-template-columns: 1fr 1fr; /* Divide into two equal columns */
+  align-items: center;             /* Vertically center the elements */
+  gap: var(--space-6);             /* gap: 64px; */
 }
 
-/* ---- Stacked Image Composition ---- */
+/*  Stacked Image Composition  */
 .about-images {
   position: relative;
   padding-bottom: var(--space-6); /* padding-bottom: 64px; */
@@ -23,43 +24,43 @@
   height: 480px;
   object-fit: cover;
   border-radius: var(--radius-xl); /* border-radius: 24px; */
-  box-shadow: var(--shadow-xl);    /* ស្រមោលធំខ្លាំង */
+  box-shadow: var(--shadow-xl);    /* Extra-large shadow */
 }
 
 /* Small overlapping secondary image */
 .about-img-secondary {
-  position: absolute;             /* ដាក់រូបត្រួតលើរូបធំ */
+  position: absolute;              /* Position the image overlapping the main image */
   bottom: 0;
-  right: -24px;                   /* យោងចេញក្រៅ 24px */
+  right: -24px;                    /* Extend 24px beyond the right edge */
   width: 200px;
   height: 200px;
   object-fit: cover;
   border-radius: var(--radius-xl); /* border-radius: 24px; */
-  border: 6px solid var(--bg-page); /* បន្ទាត់ជុំវិញពណ៌ដូចផ្ទៃ Background */
-  box-shadow: var(--shadow-lg);    /* ស្រមោលធំ */
+  border: 6px solid var(--bg-page); /* Border matching the background color */
+  box-shadow: var(--shadow-lg);    /* Large shadow */
 }
 
-/* ---- Content Side ---- */
+/*  Content Side  */
 .about-content {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);            /* gap: 24px; */
+  gap: var(--space-3);             /* gap: 24px; */
 }
 
 .about-text {
-  color: var(--text-muted);       /* color: #7a5c4a (Light) / #a07860 (Dark) */
+  color: var(--text-muted);        /* color: #7a5c4a (Light) / #a07860 (Dark) */
   font-size: 1.02rem;
   line-height: 1.8;
 }
 
-/* ---- Stats Row ---- */
+/*  Stats Row  */
 .about-stats {
   display: flex;
-  gap: var(--space-4);            /* gap: 32px; */
-  margin: var(--space-2) 0;       /* margin: 16px 0; */
-  padding: var(--space-3) 0;      /* padding: 24px 0; */
-  border-top: 1px solid var(--border-color);    /* គូសបន្ទាត់ខាងលើ */
-  border-bottom: 1px solid var(--border-color); /* គូសបន្ទាត់ខាងក្រោម */
+  gap: var(--space-4);             /* gap: 32px; */
+  margin: var(--space-2) 0;        /* margin: 16px 0; */
+  padding: var(--space-3) 0;       /* padding: 24px 0; */
+  border-top: 1px solid var(--border-color);    /* Add a top border */
+  border-bottom: 1px solid var(--border-color); /* Add a bottom border */
 }
 
 .stat {
@@ -70,16 +71,16 @@
 
 .stat-number {
   font-family: var(--font-serif);
-  font-size: 2rem;                /* ទំហំ: 32px */
+  font-size: 2rem;                 /* Font size: 32px */
   font-weight: 700;
-  color: var(--clr-primary-500);  /* color: #8b5e3c; */
+  color: var(--clr-primary-500);   /* color: #8b5e3c; */
   line-height: 1;
 }
 
 .stat-label {
-  font-size: 0.78rem;             /* ទំហំ: 12.48px */
+  font-size: 0.78rem;              /* Font size: 12.48px */
   font-weight: 600;
-  letter-spacing: 0.08em;         /* គម្លាតអក្សរ */
-  text-transform: uppercase;      /* អក្សរធំទាំងអស់ */
-  color: var(--text-muted);       /* color: #7a5c4a (Light) / #a07860 (Dark) */
+  letter-spacing: 0.08em;          /* Spacing between letters */
+  text-transform: uppercase;       /* Convert all letters to uppercase */
+  color: var(--text-muted);        /* color: #7a5c4a (Light) / #a07860 (Dark) */
 }

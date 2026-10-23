@@ -1,145 +1,145 @@
-/* ==========================================================
-   form-validation.js — Contact Form Validation
-   ========================================================== */
-
 (function () {
-  "use strict";
 
-  var form = document.getElementById("contactForm");
-  if (!form) return; // Exit if form doesn't exist on this page
+  // Find the contact form by its id
+  const form = document.getElementById("contactForm");
 
-  // --- 1. Helper: show/clear error ---
+  // If the form is not found, stop execution
+  if (!form) return;
 
-  function showError(inputId, errorId, message) {
-    var input = document.getElementById(inputId);
-    var error = document.getElementById(errorId);
-    if (input)  input.classList.add("error");
-    if (error)  error.textContent = message;
+  // Shortcut function for document.getElementById()
+  const $ = (id) => document.getElementById(id);
+
+  // Show an error message
+  function error(id, msg) {
+
+    // Add the error class to the input
+    $(id).classList.add("error");
+
+    // Display the error message
+    $(id + "Error").textContent = msg;
   }
 
-  function clearError(inputId, errorId) {
-    var input = document.getElementById(inputId);
-    var error = document.getElementById(errorId);
-    if (input)  input.classList.remove("error");
-    if (error)  error.textContent = "";
+  // Clear an error message
+  function clear(id) {
+
+    // Remove the error class from the input
+    $(id).classList.remove("error");
+
+    // Clear the error message text
+    $(id + "Error").textContent = "";
   }
 
-  // --- 2. Individual validators ---
+  // Validate a single field
+  function validate(id, fn) {
 
-  function validateName() {
-    var val = document.getElementById("name").value.trim();
-    if (!val) {
-      showError("name", "nameError", "Please enter your name.");
-      return false;
-    }
-    if (val.length < 2) {
-      showError("name", "nameError", "Name must be at least 2 characters.");
-      return false;
-    }
-    clearError("name", "nameError");
-    return true;
+    // Get the input value and trim leading/trailing whitespace
+    const val = $(id).value.trim();
+
+    // If validation passes → clear the error and return true
+    // If validation fails → return false
+    return fn(val) ? (clear(id), true) : false;
   }
 
-  function validateEmail() {
-    var val = document.getElementById("email").value.trim();
-    // Simple but effective email regex
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!val) {
-      showError("email", "emailError", "Please enter your email address.");
-      return false;
-    }
-    if (!emailRegex.test(val)) {
-      showError("email", "emailError", "Please enter a valid email address.");
-      return false;
-    }
-    clearError("email", "emailError");
-    return true;
-  }
+  // Validation rules
+  const rules = {
 
-  function validateSubject() {
-    var val = document.getElementById("subject").value.trim();
-    if (!val) {
-      showError("subject", "subjectError", "Please enter a subject.");
-      return false;
-    }
-    if (val.length < 3) {
-      showError("subject", "subjectError", "Subject must be at least 3 characters.");
-      return false;
-    }
-    clearError("subject", "subjectError");
-    return true;
-  }
+    // Name must be at least 2 characters
+    name: v =>
+      v && v.length >= 2 ||
+      "Name must be at least 2 characters.",
 
-  function validateMessage() {
-    var val = document.getElementById("message").value.trim();
-    if (!val) {
-      showError("message", "messageError", "Please write your message.");
-      return false;
-    }
-    if (val.length < 10) {
-      showError("message", "messageError", "Message must be at least 10 characters.");
-      return false;
-    }
-    clearError("message", "messageError");
-    return true;
-  }
+    // Email format check
+    email: v =>
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) ||
+      "Invalid email.",
 
-  // --- 3. Real-time validation (validate on blur for better UX) ---
-  // Blur fires when a field loses focus — less disruptive than 'input' while typing
+    // Subject must be at least 3 characters
+    subject: v =>
+      v && v.length >= 3 ||
+      "Subject must be at least 3 characters.",
 
-  document.getElementById("name").addEventListener("blur", validateName);
-  document.getElementById("email").addEventListener("blur", validateEmail);
-  document.getElementById("subject").addEventListener("blur", validateSubject);
-  document.getElementById("message").addEventListener("blur", validateMessage);
+    // Message must be at least 10 characters
+    message: v =>
+      v && v.length >= 10 ||
+      "Message must be at least 10 characters."
+  };
 
-  // Clear error as soon as user starts typing again
-  ["name", "email", "subject", "message"].forEach(function (id) {
-    document.getElementById(id).addEventListener("input", function () {
-      clearError(id, id + "Error");
+  // Loop through all fields
+  Object.keys(rules).forEach(id => {
+
+    // Validate when the user leaves the input (blur)
+    $(id).addEventListener("blur", () => {
+
+      // Check the value
+      const res = rules[id]($(id).value.trim());
+
+      // If invalid → show the error
+      if (res !== true) error(id, res);
+
+      // If valid → clear the error
+      else clear(id);
     });
+
+    // When the user types → clear the error immediately
+    $(id).addEventListener("input", () => clear(id));
   });
 
-  // --- 4. Form submission ---
+  // Handle form submission
+  form.addEventListener("submit", (e) => {
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevent actual form submission (static site, no backend)
+    // Prevent the form from reloading the page
+    e.preventDefault();
 
-    // Run all validators; collect results
-    var isValid =
-      validateName()    &
-      validateEmail()   &
-      validateSubject() &
-      validateMessage();
+    // Assume the form is valid
+    let ok = true;
 
-    if (!isValid) return;
+    // Validate all fields
+    Object.keys(rules).forEach(id => {
 
-    // --- 5. Simulate successful submission ---
-    // Disable submit button to prevent double submission
-    var submitBtn = form.querySelector('[type="submit"]');
-    submitBtn.disabled = true;
-    submitBtn.textContent = "Sending...";
+      const res = rules[id]($(id).value.trim());
 
-    // Simulate network delay with setTimeout
-    setTimeout(function () {
-      // Show success message
-      var successEl = document.getElementById("formSuccess");
-      if (successEl) {
-        successEl.textContent = "Message sent! We'll get back to you within 24 hours.";
+      // If there is an error
+      if (res !== true) {
+
+        error(id, res);
+
+        ok = false;
       }
+    });
 
-      // Reset the form fields
+    // If there are errors, stop submission
+    if (!ok) return;
+
+    // Find the submit button
+    const btn = form.querySelector("[type=submit]");
+
+    // Temporarily disable the button
+    btn.disabled = true;
+
+    // Change the button text
+    btn.textContent = "Sending...";
+
+    // Simulate sending data to a server
+    setTimeout(() => {
+
+      // Show the success message
+      $("formSuccess").textContent = "Message sent!";
+
+      // Reset the form
       form.reset();
 
-      // Re-enable button
-      submitBtn.disabled = false;
-      submitBtn.textContent = "Send Message";
+      // Re-enable the button
+      btn.disabled = false;
 
-      // Clear success message after 6 seconds
-      setTimeout(function () {
-        if (successEl) successEl.textContent = "";
-      }, 6000);
+      // Restore the button text
+      btn.textContent = "Send Message";
 
-    }, 1200);
+      // Clear the success message after 4 seconds
+      setTimeout(() => {
+        $("formSuccess").textContent = "";
+      }, 4000);
+
+    }, 1000);
   });
 
 })();

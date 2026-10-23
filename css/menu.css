@@ -1,182 +1,186 @@
-   /* menu.css — Featured Menu Section & Cards */
+/* menu.css — Menu Section & Poster-style Cards */
 .menu-section {
-  padding: var(--space-7) 0; /* !NOTE: គម្លាតលើក្រោម 96px */
-  background-color: var(--bg-section-alt); /* !NOTE: ពណ៌ផ្ទៃខាងក្រោយផ្នែកនេះ */
+  padding: var(--space-7) 0;
+  background-color: var(--bg-section-alt);
 }
 
-/* ---- Filter Tabs (Horizontal Scroll for Mobile) ---- */
+/* ---- Filter Tabs (scrolls sideways on mobile) ---- */
 .menu-filters {
   display: flex;
-  flex-wrap: nowrap; 
+  flex-wrap: nowrap;
   justify-content: center;
-  gap: var(--space-2); /* !NOTE: គម្លាតរវាងប៊ូតុង 16px */
-  margin-bottom: var(--space-5); /* !NOTE: គម្លាតខាងក្រោម 48px */
-  
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
   overflow-x: auto;
-  padding: 0 var(--space-2) 10px; /* !NOTE: គម្លាតសងខាង 16px */
+  padding: 0 var(--space-2) 10px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
 
-.menu-filters::-webkit-scrollbar {
-  display: none;
-}
+.menu-filters::-webkit-scrollbar { display: none; }
 
 .filter-btn {
   flex: 0 0 auto;
   padding: 0.55rem 1.4rem;
-  border-radius: var(--radius-full); /* !NOTE: មូលជ្រុង 9999px */
+  border-radius: var(--radius-full);
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--text-muted); /* !NOTE: ពណ៌អក្សរស្រាល */
-  border: 2px solid var(--border-color); /* !NOTE: ពណ៌បន្ទាត់គែម */
-  background-color: var(--bg-card); /* !NOTE: ពណ៌ផ្ទៃប៊ូតុង */
+  color: var(--text-muted);
+  border: 2px solid var(--border-color);
+  background-color: var(--bg-card);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .filter-btn:hover {
-  color: var(--clr-primary-500); /* !NOTE: ពណ៌ចម្បងពេលដាក់ Mouse លើ */
-  border-color: var(--clr-primary-300); /* !NOTE: ពណ៌ Primary ស្រាលជាងមុន */
+  color: var(--clr-primary-500);
+  border-color: var(--clr-primary-300);
   transform: translateY(-1px);
 }
 
 .filter-btn.active {
   color: #fff;
-  background-color: var(--clr-primary-500); /* !NOTE: ពណ៌ចម្បងពេល Active */
+  background-color: var(--clr-primary-500);
   border-color: var(--clr-primary-500);
 }
 
-/* ---- Cards Grid ---- */
+/* ---- Grid ---- */
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--space-4); /* !NOTE: គម្លាតរវាងកាត 32px */
+  gap: var(--space-3);
 }
 
-/* ---- Menu Card Item ---- */
+/* ---- Card: full image, text on a dark gradient ---- */
 .menu-card {
-  background-color: var(--bg-card); /* !NOTE: ពណ៌ផ្ទៃកាត */
-  border-radius: var(--radius-lg); /* !NOTE: មូលជ្រុង 16px */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;          /* text sits at the bottom */
+  min-height: 440px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-sm); /* !NOTE: ស្រមោលស្រាល */
-  border: 1px solid var(--border-color); /* !NOTE: ពណ៌បន្ទាត់គែម */
+  background-color: #2a1d14;          /* shown while the image loads */
+  box-shadow: var(--shadow-md);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .menu-card:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-lg); /* !NOTE: ស្រមោលធំពេលដាក់ Mouse លើ */
+  box-shadow: var(--shadow-xl);
 }
 
-.menu-card.hidden {
-  display: none;
-}
+.menu-card.hidden { display: none; }
 
-/* ---- Image Area ---- */
+/* ---- Image fills the whole card ---- */
 .card-img-wrap {
-  position: relative;
-  overflow: hidden;
-  height: 220px;
+  position: absolute;
+  inset: 0;
 }
 
 .card-img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s ease;
+  transition: transform 0.7s ease;
 }
 
-.menu-card:hover .card-img-wrap img {
-  transform: scale(1.08);
-}
+.menu-card:hover .card-img-wrap img { transform: scale(1.07); }
 
+/* Badge: top-left label */
 .card-badge {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  padding: 0.25rem 0.75rem;
-  border-radius: var(--radius-full); /* !NOTE: មូលជ្រុង 9999px */
-  background-color: var(--clr-accent-400); /* !NOTE: ពណ៌លេចធ្លោ */
-  color: #fff;
-  font-size: 0.75rem;
+  top: 16px;
+  left: 16px;
+  right: auto;
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--clr-accent-400);
+  color: #2a1608;
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
-/* ---- Card Content ---- */
+/* ---- Text area over the image ---- */
 .card-body {
-  padding: var(--space-3); /* !NOTE: គម្លាតខាងក្នុង 24px */
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
-  gap: var(--space-1); /* !NOTE: គម្លាតរវាងធាតុ 8px */
+  gap: 6px;
+  padding: 90px 22px 22px;            /* top padding = gradient fade */
+  background: linear-gradient(
+    to top,
+    rgba(20, 10, 4, 0.95) 0%,
+    rgba(20, 10, 4, 0.80) 55%,
+    rgba(20, 10, 4, 0) 100%
+  );
 }
 
 .card-header {
   display: flex;
-  align-items: flex-start;
+  align-items: baseline;
   justify-content: space-between;
-  gap: var(--space-2); /* !NOTE: គម្លាត 16px */
+  gap: var(--space-2);
 }
 
 .card-title {
-  font-family: var(--font-serif); /* !NOTE: ពុម្ពអក្សរ Serif */
-  font-size: 1.15rem;
-  color: var(--text-heading); /* !NOTE: ពណ៌ចំណងជើង */
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: #fff;
 }
 
 .card-price {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  color: var(--clr-primary-500); /* !NOTE: ពណ៌ចម្បង */
+  color: var(--clr-accent-300);
   white-space: nowrap;
 }
 
 .card-desc {
-  font-size: 0.9rem;
-  color: var(--text-muted); /* !NOTE: ពណ៌អក្សរស្រាល */
-  line-height: 1.6;
-  flex: 1;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+  /* limit to 2 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .card-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: var(--space-1); /* !NOTE: គម្លាតខាងលើ 8px */
-  padding-top: var(--space-1);
-  border-top: 1px solid var(--border-color); /* !NOTE: ពណ៌បន្ទាត់គែម */
+  margin-top: var(--space-1);
 }
 
 .card-tag {
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--text-muted); /* !NOTE: ពណ៌អក្សរស្រាល */
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .card-btn {
-  padding: 0.45rem 1.1rem;
-  border-radius: var(--radius-full); /* !NOTE: មូលជ្រុង 9999px */
+  padding: 0.5rem 1.1rem;
+  border-radius: var(--radius-md);
+  background-color: #f3e3cc;          /* cream */
+  color: #3a2210;
   font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--clr-primary-500); /* !NOTE: ពណ៌ចម្បង */
-  border: 1.5px solid var(--clr-primary-300); /* !NOTE: ពណ៌ Primary ស្រាល */
-  background-color: transparent;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
-.card-btn:hover {
-  background-color: var(--clr-primary-500); /* !NOTE: ពណ៌ចម្បង */
-  color: #fff;
-  border-color: var(--clr-primary-500);
-}
+.card-btn:hover  { background-color: var(--clr-accent-300); }
+.card-btn:active { transform: scale(0.96); }
 
-/* ---- CTA Section ---- */
+/* ---- CTA ---- */
 .menu-cta {
   text-align: center;
-  margin-top: var(--space-5); /* !NOTE: គម្លាត 48px */
+  margin-top: var(--space-5);
 }

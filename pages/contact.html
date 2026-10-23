@@ -9,46 +9,88 @@
   <link rel="stylesheet" href="../css/contact.css" />
   <link rel="stylesheet" href="../css/footer.css" />
   <link rel="stylesheet" href="../css/responsive.css" />
-  <style>
+  
+<style>
     .page-hero {
       min-height: 300px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      /* !NOTE: ការគណនា Padding ដោយប្រើ var(--navbar-h) និង var(--space-6) សម្រាប់គម្លាត */
-      padding: calc(var(--navbar-h) + var(--space-6)) var(--space-4) var(--space-6); 
-      background: linear-gradient(135deg, var(--clr-primary-600), var(--clr-primary-500)); /* !NOTE: ពណ៌ Gradient ពីពណ៌ Primary 600 ទៅ 500 */
+
+      /* !NOTE: Calculate padding using var(--navbar-h) and var(--space-6) for proper spacing */
+      padding: calc(var(--navbar-h) + var(--space-6)) var(--space-4) var(--space-6);
+
+      /* !NOTE: Gradient from Primary 600 to Primary 500 */
+      background: linear-gradient(135deg, var(--clr-primary-600), var(--clr-primary-500));
       color: #fff;
     }
-    .page-hero h1 { color: #fff; }
-    .page-hero p  { color: rgba(255,255,255,0.82); margin-top: var(--space-2); } /* !NOTE: var(--space-2) = 16px */
+
+    .page-hero h1 {
+      color: #fff;
+    }
+
+    /* !NOTE: var(--space-2) = 16px */
+    .page-hero p {
+      color: rgba(255, 255, 255, 0.82);
+      margin-top: var(--space-2);
+    }
 
     /* Map placeholder */
     .map-section {
-      padding: var(--space-6) 0; /* !NOTE: var(--space-6) = 64px */
-      background-color: var(--bg-page); /* !NOTE: var(--bg-page) = ពណ៌ផ្ទៃ Background ទំព័រ */
+      /* !NOTE: var(--space-6) = 64px */
+      padding: var(--space-6) 0;
+
+      /* !NOTE: var(--bg-page) = Page background color */
+      background-color: var(--bg-page);
     }
+
     .map-placeholder {
       width: 100%;
       height: 380px;
-      border-radius: var(--radius-xl); /* !NOTE: var(--radius-xl) = 24px (មូលជ្រុងកាត) */
+
+      /* var(--radius-xl) = 24px (card corner radius) */
+      border-radius: var(--radius-xl);
       overflow: hidden;
-      border: 1px solid var(--border-color); /* !NOTE: var(--border-color) = ពណ៌គែម */
-      box-shadow: var(--shadow-md); /* !NOTE: var(--shadow-md) = ស្រមោលមធ្យម */
+
+      /* var(--border-color) = Border color */
+      border: 1px solid var(--border-color);
+
+      /* var(--shadow-md) = Medium shadow */
+      box-shadow: var(--shadow-md);
+
       /* Styled placeholder since we can't embed external maps */
-      background: linear-gradient(135deg, var(--clr-primary-100), var(--clr-primary-200)); /* !NOTE: ពណ៌ Primary 100 ទៅ 200 */
+
+      /* Gradient from Primary 100 to Primary 200 */
+      background: linear-gradient(135deg, var(--clr-primary-100), var(--clr-primary-200));
+
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: var(--space-2); /* !NOTE: var(--space-2) = 16px */
-      color: var(--clr-primary-600); /* !NOTE: var(--clr-primary-600) = ពណ៌អត្ថបទ Primary 600 */
+
+      /*var(--space-2) = 16px */
+      gap: var(--space-2);
+
+      /* var(--clr-primary-600) = Primary 600 text color */
+      color: var(--clr-primary-600);
     }
-    .map-placeholder span { font-size: 3rem; }
-    .map-placeholder p    { font-weight: 600; font-size: 1.05rem; }
-    .map-placeholder small { color: var(--text-muted); } /* !NOTE: var(--text-muted) = ពណ៌អក្សរស្រាល */
-  </style>
+
+    .map-placeholder span {
+      font-size: 3rem;
+    }
+
+    .map-placeholder p {
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    /* var(--text-muted) = Muted text color */
+    .map-placeholder small {
+      color: var(--text-muted);
+    }
+</style>
+
 </head>
 <body>
     <!-- Navbar -->

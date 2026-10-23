@@ -1,12 +1,12 @@
 
-   /* testimonial.css — Customer Testimonials Carousel */
+/* testimonial.css — Customer Testimonials Carousel */
 
 .testimonial-section {
-  padding: var(--space-7) 0; /* !NOTE: var(--space-7) = 96px */
-  background-color: var(--bg-page); /* !NOTE: var(--bg-page) = ពណ៌ផ្ទៃទំព័រ (Variable) */
+  padding: var(--space-7) 0; /* var(--space-7) = 96px */
+  background-color: var(--bg-page); /* var(--bg-page) = Page background color (Variable) */
 }
 
-/* ---- Carousel Wrapper ---- */
+/*  Carousel Wrapper  */
 .testimonial-carousel {
   position: relative;
   overflow: hidden;
@@ -19,71 +19,71 @@
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ---- Individual Card ---- */
+/*  Individual Card  */
 .testimonial-card {
   flex: 0 0 100%;
   max-width: 100%;
-  background-color: var(--bg-card); /* !NOTE: var(--bg-card) = ពណ៌ផ្ទៃកាត */
-  border: 1px solid var(--border-color); /* !NOTE: var(--border-color) = ពណ៌បន្ទាត់គែម */
-  border-radius: var(--radius-xl); /* !NOTE: var(--radius-xl) = 24px (ឬតាមកំណត់) */
-  padding: var(--space-5); /* !NOTE: var(--space-5) = 48px */
-  box-shadow: var(--shadow-md); /* !NOTE: var(--shadow-md) = ស្រមោលមធ្យម */
+  background-color: var(--bg-card); /* var(--bg-card) = Card background color */
+  border: 1px solid var(--border-color); /* var(--border-color) = Border color */
+  border-radius: var(--radius-xl); /* var(--radius-xl) = 24px (or as configured) */
+  padding: var(--space-5); /* var(--space-5) = 48px */
+  box-shadow: var(--shadow-md); /* var(--shadow-md) = Medium shadow */
   display: flex;
   flex-direction: column;
-  gap: var(--space-3); /* !NOTE: var(--space-3) = 24px */
+  gap: var(--space-3); /* var(--space-3) = 24px */
 }
 
-/* ---- Star Rating ---- */
+/*  Star Rating  */
 .stars {
   font-size: 1.3rem;
-  color: var(--clr-accent-400); /* !NOTE: var(--clr-accent-400) = ពណ៌លឿងមាសសម្រាប់ផ្កាយ */
+  color: var(--clr-accent-400); /* var(--clr-accent-400) = Golden-yellow color for stars */
   letter-spacing: 0.1em;
 }
 
-/* ---- Quote Text ---- */
+/*  Quote Text  */
 .testimonial-text {
-  font-family: var(--font-serif); /* !NOTE: var(--font-serif) = ក្រុមអក្សរបែប Serif */
+  font-family: var(--font-serif); /* var(--font-serif) = Serif font family */
   font-size: 1.2rem;
   font-style: italic;
-  color: var(--text-heading); /* !NOTE: var(--text-heading) = ពណ៌អក្សរចំណងជើង */
+  color: var(--text-heading); /* var(--text-heading) = Heading text color */
   line-height: 1.75;
   flex: 1;
 }
 
-/* ---- Author Row ---- */
+/*  Author Row  */
 .testimonial-author {
   display: flex;
   align-items: center;
-  gap: var(--space-2); /* !NOTE: var(--space-2) = 16px */
-  margin-top: var(--space-2); /* !NOTE: var(--space-2) = 16px */
+  gap: var(--space-2); /* var(--space-2) = 16px */
+  margin-top: var(--space-2); /* var(--space-2) = 16px */
 }
 
 .testimonial-author img {
   width: 52px;
   height: 52px;
-  border-radius: var(--radius-full); /* !NOTE: var(--radius-full) = 9999px (មូលពេញ) */
+  border-radius: var(--radius-full); /* var(--radius-full) = 9999px (fully circular) */
   object-fit: cover;
-  border: 3px solid var(--clr-primary-200); /* !NOTE: var(--clr-primary-200) = ពណ៌ Primary ស្រាលខ្លាំង */
+  border: 3px solid var(--clr-primary-200); /* var(--clr-primary-200) = Very light primary color */
 }
 
 .testimonial-author strong {
   display: block;
   font-size: 1rem;
-  color: var(--text-heading); /* !NOTE: var(--text-heading) = ពណ៌អក្សរចំណងជើង */
+  color: var(--text-heading); /* var(--text-heading) = Heading text color */
 }
 
 .testimonial-author span {
   font-size: 0.85rem;
-  color: var(--text-muted); /* !NOTE: var(--text-muted) = ពណ៌អក្សរស្រាល (Secondary) */
+  color: var(--text-muted); /* var(--text-muted) = Muted (secondary) text color */
 }
 
-/* ---- Carousel Controls ---- */
+/*  Carousel Controls  */
 .carousel-controls {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-2); /* !NOTE: var(--space-2) = 16px */
-  margin-top: var(--space-4); /* !NOTE: var(--space-4) = 32px */
+  gap: var(--space-2); /* var(--space-2) = 16px */
+  margin-top: var(--space-4); /* var(--space-4) = 32px */
 }
 
 .carousel-btn {
@@ -92,23 +92,23 @@
   justify-content: center;
   width: 44px;
   height: 44px;
-  border-radius: var(--radius-full); /* !NOTE: var(--radius-full) = 9999px */
-  background-color: var(--clr-primary-100); /* !NOTE: var(--clr-primary-100) = ពណ៌ផ្ទៃប៊ូតុង */
-  color: var(--clr-primary-500); /* !NOTE: var(--clr-primary-500) = ពណ៌ Primary ចម្បង */
-  border: 1.5px solid var(--clr-primary-300); /* !NOTE: var(--clr-primary-300) = ពណ៌បន្ទាត់ប៊ូតុង */
+  border-radius: var(--radius-full); /* var(--radius-full) = 9999px */
+  background-color: var(--clr-primary-100); /* var(--clr-primary-100) = Button background color */
+  color: var(--clr-primary-500); /* var(--clr-primary-500) = Primary color */
+  border: 1.5px solid var(--clr-primary-300); /* var(--clr-primary-300) = Button border color */
   font-size: 1.1rem;
   font-weight: 700;
   cursor: pointer;
-  transition: background-color var(--transition-fast), transform var(--transition-fast); /* !NOTE: var(--transition-fast) = ល្បឿនលឿន */
+  transition: background-color var(--transition-fast), transform var(--transition-fast); /* var(--transition-fast) = Fast transition speed */
 }
 
 .carousel-btn:hover {
-  background-color: var(--clr-primary-500); /* !NOTE: ពណ៌ប្តូរពេល Hover */
+  background-color: var(--clr-primary-500); /* Color changes on hover */
   color: #fff;
   transform: scale(1.05);
 }
 
-/* ---- Dot Indicators (generated by JS) ---- */
+/*  Dot Indicators (generated by JS)  */
 .carousel-dots {
   display: flex;
   gap: 8px;
@@ -118,16 +118,16 @@
 .dot {
   width: 8px;
   height: 8px;
-  border-radius: var(--radius-full); /* !NOTE: var(--radius-full) = 9999px */
-  background-color: var(--clr-primary-200); /* !NOTE: var(--clr-primary-200) = ពណ៌ dot ធម្មតា */
+  border-radius: var(--radius-full); /* var(--radius-full) = 9999px */
+  background-color: var(--clr-primary-200); /* var(--clr-primary-200) = Default dot color */
   cursor: pointer;
   transition: background-color var(--transition-fast),
               transform var(--transition-fast),
-              width var(--transition-base); /* !NOTE: var(--transition-base) = ល្បឿនមធ្យម */
+              width var(--transition-base); /* var(--transition-base) = Medium transition speed */
 }
 
 /* Active dot is wider (pill shape) */
 .dot.active {
-  background-color: var(--clr-primary-500); /* !NOTE: var(--clr-primary-500) = ពណ៌ dot ពេលសកម្ម */
+  background-color: var(--clr-primary-500); /* var(--clr-primary-500) = Active dot color */
   width: 24px;
 }
