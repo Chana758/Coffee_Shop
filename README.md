@@ -3,7 +3,7 @@
 A responsive coffee shop website built with pure HTML, CSS and JavaScript.
 
 **Live demo:** https://coffee-shop-five-ochre.vercel.app
-
+![Brew & Soul preview](images/screenshot.png)
 ## Features
 
 - Responsive layout (desktop, tablet, mobile)
